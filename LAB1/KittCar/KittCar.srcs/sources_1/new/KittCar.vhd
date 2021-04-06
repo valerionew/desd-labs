@@ -104,8 +104,8 @@ OR_shift: for I in 0 to NUM_OF_LEDS-1 generate
 	leds(I) <= Pout_send(I) or Pout_return(NUM_OF_LEDS-1-I);
 end generate;
 
-
--- leds <= Pout_send(Pout_send'range) or Pout_return(Pout_return'reverse_range);
+-- potremmo girare return in un altro segnale e vedere se funziona 
+--leds <= Pout_send(Pout_send'range) or Pout_return(Pout_return'reverse_range);
 
 
 --////switch read to assign N_prescale signal////

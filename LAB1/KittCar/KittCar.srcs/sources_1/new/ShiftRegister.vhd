@@ -32,14 +32,14 @@ entity ShiftRegister is
 end ShiftRegister;
 
 architecture Behavioral of ShiftRegister is
-    signal T : std_logic_vector(SR_DEPTH-1 downto 0) := (Others => '0');
+    signal T : std_logic_vector(SR_DEPTH-1 downto 0) := (SR_DEPTH-1 => SR_INIT, Others => '0');
 begin
   pout <= T; --parallel output of the shift registerp
     
   SHIFT : process(clk,reset)
   begin
       if( reset = '1') then
-            T <= (others => SR_INIT);
+            T <= (SR_DEPTH-1 => SR_INIT, Others => '0');
         elsif rising_edge(clk) then
             if shift_ready = '1' then
                 T <= T(SR_DEPTH-2 downto 0) & din;
