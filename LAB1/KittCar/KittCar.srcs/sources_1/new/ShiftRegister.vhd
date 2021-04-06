@@ -25,23 +25,25 @@ entity ShiftRegister is
         shift_ready : IN  STD_LOGIC;
         din   :   IN    STD_LOGIC;
         dout  :   OUT   STD_LOGIC;
-        pout  :   OUT   std_logic_vector(SR_DEPTH downto 0)
+        pout  :   OUT   std_logic_vector(SR_DEPTH-1 downto 0)
         ---------------------------------
-        
-    );
+     
+    ); 
 end ShiftRegister;
 
 architecture Behavioral of ShiftRegister is
     signal T : std_logic_vector(SR_DEPTH-1 downto 0) := (Others => '0');
 begin
-  pout <= T; --parallel output of the shift register
+  pout <= T; --parallel output of the shift registerp
     
   SHIFT : process(clk,reset)
   begin
       if( reset = '1') then
             T <= (others => SR_INIT);
         elsif rising_edge(clk) then
-            T <= T(SR_DEPTH-1 downto 0) & din;
+            if shift_ready = '1' then
+                T <= T(SR_DEPTH-2 downto 0) & din;
+            end if;
         end if;
 
 
@@ -50,3 +52,4 @@ begin
   dout <= T(SR_DEPTH-1);
 
 end Behavioral;
+

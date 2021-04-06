@@ -73,14 +73,16 @@ component ShiftRegister is
 			shift_ready : IN  STD_LOGIC;
 			din   :   IN    STD_LOGIC;
 			dout  :   OUT   STD_LOGIC;
-			pout  :   OUT   std_logic_vector(SR_DEPTH downto 0)
+			pout  :   OUT   std_logic_vector(SR_DEPTH-1 downto 0)
 			---------------------------------
 		);
 end component;
 
 
 --CONSTANTS
-constant fpga_frequency : integer := 100000000; --change this to set t0
+constant fpga_frequency_prescaler: positive := 1000000; --value of the main prescaler
+--if fpga_frequency_prescaler = 1e+6, base frequency will be 100e+6Hz / 1e+6 = 100Hz
+
 --SIGNALS
 signal send_to_return : STD_LOGIC := '0';
 signal return_to_send : STD_LOGIC := '1';
@@ -91,8 +93,8 @@ signal Pout_send   : std_logic_vector(NUM_OF_LEDS-1 downto 0);
 signal Pout_return : std_logic_vector(NUM_OF_LEDS-1 downto 0);
 
 --signal counters
-signal counter : positive := 0;
-signal t0 : positive := 0;
+signal first_counter : integer := 0;
+signal second_counter : integer := 0;
 
 
 begin
@@ -103,7 +105,7 @@ OR_shift: for I in 0 to NUM_OF_LEDS-1 generate
 end generate;
 
 
---leds<= Pout_send(Pout_send'range) or Pout_return(Pout_return'reverse_range)
+-- leds <= Pout_send(Pout_send'range) or Pout_return(Pout_return'reverse_range);
 
 
 --////switch read to assign N_prescale signal////
@@ -112,28 +114,32 @@ end generate;
 
 -- clk downscaling
 	clk_downscale_process: process(reset,clk)
-	
 	begin
 
 		if reset = '1' then
-			counter <= 0;
-			t0 <= 0;
+			first_counter <= 0;
+			second_counter <= 0;
 			clock_ready <= '0';
 		elsif rising_edge(clk) then
 
-			--counter update
-			counter <= counter + 1;
+			-- counter update
+			first_counter <= first_counter + 1;
 
-			-- first counter
-			if counter = fpga_frequency then 
-				t0 <= t0 + 1;  -- downscaled clock state change
-				counter <= 0;
+			-- first prescaled first_counter
+			if first_counter >= fpga_frequency_prescaler then
+			-- condition is >= instead of just = because if first counter skips some steps
+			-- writing just = could cause issues
+				second_counter <= second_counter + 1;  -- downscaled clock state change
+				first_counter <= 0;
 			end if;	
 
-			-- second counter to set multiples of t0
-			if t0 = to_integer(unsigned(sw)) then -- second counter
-				clock_ready <= not clock_ready;  -- system is ready to go to next led stage
-				t0 <= 0;
+			-- second counter to set multiples of second_counter to slow frequency down
+			if second_counter >= to_integer(unsigned(sw)) then -- second counter
+			-- condition is >= instead of = because user could change value while counting
+				clock_ready <= '1';  -- system is ready to go to next led stage
+				second_counter <= 0;
+			else
+				clock_ready <= '0';
 			end if;	
 		end if;
 	end process;
@@ -141,12 +147,12 @@ end generate;
 	SHIFT_SEND : ShiftRegister -- left to right
 	Generic  map(
 		SR_DEPTH   => 16,
-		SR_INIT    => '0' 	
+		SR_INIT    => '1' 	
 	)
 	port map (
 	        ---------- Reset/Clock ----------
 			reset   => reset,
-			clk     => ,
+			clk     => clk,
 			---------------------------------
 	
 			------------- Data --------------
@@ -158,10 +164,14 @@ end generate;
 	);
 	
 	SHIFT_RETURN : ShiftRegister -- right to left
+    Generic  map(
+		SR_DEPTH   => 16,
+		SR_INIT    => '0' 	
+	)
 	port map ( --USARE LA FRECCIA VERSO DX NEL PORTMAP =>
 	        ---------- Reset/Clock ----------
 			reset   => reset,
-			clk     => ,
+			clk     => clk,
 			---------------------------------
 	
 			------------- Data --------------
