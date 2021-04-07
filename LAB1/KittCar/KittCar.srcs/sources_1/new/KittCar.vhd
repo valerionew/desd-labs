@@ -80,7 +80,7 @@ end component;
 
 
 --CONSTANTS
-constant fpga_frequency_prescaler: positive := 1000000; --value of the main prescaler
+constant fpga_frequency_prescaler: positive := 100000; --value of the main prescaler
 --if fpga_frequency_prescaler = 1e+6, base frequency will be 100e+6Hz / 1e+6 = 100Hz
 
 --SIGNALS
@@ -147,7 +147,7 @@ end generate;
 			end if;	
 
 			-- second counter to set multiples of second_counter to slow frequency down
-			if second_counter >= to_integer(unsigned(sw)) then -- second counter
+			if second_counter >= (to_integer(unsigned(sw))+1) then -- second counter
 			-- condition is >= instead of = because user could change value while counting
 				clock_ready <= '1';  -- system is ready to go to next led stage
 				second_counter <= 0;

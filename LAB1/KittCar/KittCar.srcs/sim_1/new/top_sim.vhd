@@ -77,10 +77,14 @@ begin
         );
         
    clk <= not clk after 5 ns;
+   reset <= '0';
    
-    drive_reset : process
+    switches : process
         begin
-         reset <= '1';
+         wait for 320 ns;
+         sw <= (0 => '1', Others => '0');
+         wait for 640 ns;
+         sw <= (1 => '1', Others => '0');
          wait for 10 ns;
          reset <= '0';
          wait;
