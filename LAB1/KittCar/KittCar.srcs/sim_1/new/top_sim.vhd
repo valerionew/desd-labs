@@ -69,18 +69,26 @@ component KittCar is
     end component;
 
 begin
-    dut: KittCar port map(
+    dut: KittCar
+    generic map(
+        CLK_PERIOD_NS => 100, --we set this to 100 to speed up the simulation
+        MIN_KITT_CAR_STEP_MS => 1
+    )
+    port map(
         reset    => reset, 
         clk      => clk,
         sw     => sw,
         leds  => leds
-        );
+     );
         
    clk <= not clk after 5 ns;
-   reset <= '0';
+
+
    
     switches : process
         begin
+         reset <= '0';
+         wait;
          wait for 320 ns;
          sw <= (0 => '1', Others => '0');
          wait for 640 ns;

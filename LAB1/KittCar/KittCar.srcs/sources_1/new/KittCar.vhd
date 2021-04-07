@@ -80,8 +80,7 @@ end component;
 
 
 --CONSTANTS
-constant fpga_frequency_prescaler: positive := 100000; --value of the main prescaler
---if fpga_frequency_prescaler = 1e+6, base frequency will be 100e+6Hz / 1e+6 = 100Hz
+constant fpga_frequency_prescaler: positive := MIN_KITT_CAR_STEP_MS*1e6/CLK_PERIOD_NS; --value of the main prescaler
 
 --SIGNALS
 signal send_to_return : STD_LOGIC := '0';
@@ -101,9 +100,9 @@ begin
 
 
 --   case of 16 leds
---  |00|-|01|-|02|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|14|---?      Pout_send
+--  |00|-|01|-|02|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|14|--|       Pout_send
 --    |--|14|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|02|-|01|-|00|     Pout_return
---    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |      OR
+--   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||   ||      OR
 --   L0   L1   L2   >|   >|   >|   >|   >|   >|   >|   >|   >|   >|   >|   L14  L15     leds
 
 
