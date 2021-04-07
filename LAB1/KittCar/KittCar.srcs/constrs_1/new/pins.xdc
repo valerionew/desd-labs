@@ -213,41 +213,4 @@ set_property MARK_DEBUG true [get_nets {leds_OBUF[5]}]
 set_property MARK_DEBUG true [get_nets {leds_OBUF[8]}]
 set_property MARK_DEBUG true [get_nets {leds_OBUF[12]}]
 
-create_debug_core u_ila_0 ila
-set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_0]
-set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_0]
-set_property C_ADV_TRIGGER false [get_debug_cores u_ila_0]
-set_property C_DATA_DEPTH 1024 [get_debug_cores u_ila_0]
-set_property C_EN_STRG_QUAL false [get_debug_cores u_ila_0]
-set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_0]
-set_property C_TRIGIN_EN false [get_debug_cores u_ila_0]
-set_property C_TRIGOUT_EN false [get_debug_cores u_ila_0]
-set_property port_width 1 [get_debug_ports u_ila_0/clk]
-connect_debug_port u_ila_0/clk [get_nets [list clk_IBUF_BUFG]]
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe0]
-set_property port_width 16 [get_debug_ports u_ila_0/probe0]
-connect_debug_port u_ila_0/probe0 [get_nets [list {sw_IBUF[0]} {sw_IBUF[1]} {sw_IBUF[2]} {sw_IBUF[3]} {sw_IBUF[4]} {sw_IBUF[5]} {sw_IBUF[6]} {sw_IBUF[7]} {sw_IBUF[8]} {sw_IBUF[9]} {sw_IBUF[10]} {sw_IBUF[11]} {sw_IBUF[12]} {sw_IBUF[13]} {sw_IBUF[14]} {sw_IBUF[15]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe1]
-set_property port_width 16 [get_debug_ports u_ila_0/probe1]
-connect_debug_port u_ila_0/probe1 [get_nets [list {Pout_return[0]} {Pout_return[1]} {Pout_return[2]} {Pout_return[3]} {Pout_return[4]} {Pout_return[5]} {Pout_return[6]} {Pout_return[7]} {Pout_return[8]} {Pout_return[9]} {Pout_return[10]} {Pout_return[11]} {Pout_return[12]} {Pout_return[13]} {Pout_return[14]} {Pout_return[15]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe2]
-set_property port_width 16 [get_debug_ports u_ila_0/probe2]
-connect_debug_port u_ila_0/probe2 [get_nets [list {leds_OBUF[0]} {leds_OBUF[1]} {leds_OBUF[2]} {leds_OBUF[3]} {leds_OBUF[4]} {leds_OBUF[5]} {leds_OBUF[6]} {leds_OBUF[7]} {leds_OBUF[8]} {leds_OBUF[9]} {leds_OBUF[10]} {leds_OBUF[11]} {leds_OBUF[12]} {leds_OBUF[13]} {leds_OBUF[14]} {leds_OBUF[15]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe3]
-set_property port_width 32 [get_debug_ports u_ila_0/probe3]
-connect_debug_port u_ila_0/probe3 [get_nets [list {first_counter_reg[0]} {first_counter_reg[1]} {first_counter_reg[2]} {first_counter_reg[3]} {first_counter_reg[4]} {first_counter_reg[5]} {first_counter_reg[6]} {first_counter_reg[7]} {first_counter_reg[8]} {first_counter_reg[9]} {first_counter_reg[10]} {first_counter_reg[11]} {first_counter_reg[12]} {first_counter_reg[13]} {first_counter_reg[14]} {first_counter_reg[15]} {first_counter_reg[16]} {first_counter_reg[17]} {first_counter_reg[18]} {first_counter_reg[19]} {first_counter_reg[20]} {first_counter_reg[21]} {first_counter_reg[22]} {first_counter_reg[23]} {first_counter_reg[24]} {first_counter_reg[25]} {first_counter_reg[26]} {first_counter_reg[27]} {first_counter_reg[28]} {first_counter_reg[29]} {first_counter_reg[30]} {first_counter_reg[31]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe4]
-set_property port_width 16 [get_debug_ports u_ila_0/probe4]
-connect_debug_port u_ila_0/probe4 [get_nets [list {Pout_send[0]} {Pout_send[1]} {Pout_send[2]} {Pout_send[3]} {Pout_send[4]} {Pout_send[5]} {Pout_send[6]} {Pout_send[7]} {Pout_send[8]} {Pout_send[9]} {Pout_send[10]} {Pout_send[11]} {Pout_send[12]} {Pout_send[13]} {Pout_send[14]} {Pout_send[15]}]]
-create_debug_port u_ila_0 probe
-set_property PROBE_TYPE DATA_AND_TRIGGER [get_debug_ports u_ila_0/probe5]
-set_property port_width 32 [get_debug_ports u_ila_0/probe5]
-connect_debug_port u_ila_0/probe5 [get_nets [list {second_counter_reg[0]} {second_counter_reg[1]} {second_counter_reg[2]} {second_counter_reg[3]} {second_counter_reg[4]} {second_counter_reg[5]} {second_counter_reg[6]} {second_counter_reg[7]} {second_counter_reg[8]} {second_counter_reg[9]} {second_counter_reg[10]} {second_counter_reg[11]} {second_counter_reg[12]} {second_counter_reg[13]} {second_counter_reg[14]} {second_counter_reg[15]} {second_counter_reg[16]} {second_counter_reg[17]} {second_counter_reg[18]} {second_counter_reg[19]} {second_counter_reg[20]} {second_counter_reg[21]} {second_counter_reg[22]} {second_counter_reg[23]} {second_counter_reg[24]} {second_counter_reg[25]} {second_counter_reg[26]} {second_counter_reg[27]} {second_counter_reg[28]} {second_counter_reg[29]} {second_counter_reg[30]} {second_counter_reg[31]}]]
-set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
-set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
-set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
-connect_debug_port dbg_hub/clk [get_nets clk_IBUF_BUFG]
+

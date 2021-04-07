@@ -89,8 +89,8 @@ signal return_to_send : STD_LOGIC := '1';
 signal clock_ready : STD_LOGIC := '0';
 
 --signal N_prescale: std_logic_vector(4-1 downto 0); --4 bit prescaler to assign to the switches
-signal Pout_send   : std_logic_vector(NUM_OF_LEDS-1 downto 0);
-signal Pout_return : std_logic_vector(NUM_OF_LEDS-1 downto 0);
+signal Pout_send   : std_logic_vector(NUM_OF_LEDS-2 downto 0);
+signal Pout_return : std_logic_vector(NUM_OF_LEDS-2 downto 0);
 
 --signal counters
 signal first_counter : integer := 0;
@@ -98,11 +98,24 @@ signal second_counter : integer := 0;
 
 
 begin
+
+
+--   case of 16 leds
+--  |00|-|01|-|02|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|14|---?      Pout_send
+--    |--|14|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|__|-|02|-|01|-|00|     Pout_return
+--    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |      OR
+--   L0   L1   L2   >|   >|   >|   >|   >|   >|   >|   >|   >|   >|   >|   L14  L15     leds
+
+
+
+leds(0) <= Pout_send(0);
+leds(NUM_OF_LEDS-1) <= Pout_return(0);
 	
 -- generate or between shift registers
-OR_shift: for I in 0 to NUM_OF_LEDS-1 generate
+OR_shift: for I in 1 to NUM_OF_LEDS-2 generate
 	leds(I) <= Pout_send(I) or Pout_return(NUM_OF_LEDS-1-I);
 end generate;
+
 
 -- potremmo girare return in un altro segnale e vedere se funziona 
 --leds <= Pout_send(Pout_send'range) or Pout_return(Pout_return'reverse_range);
@@ -146,7 +159,7 @@ end generate;
 
 	SHIFT_SEND : ShiftRegister -- left to right
 	Generic  map(
-		SR_DEPTH   => 16,
+		SR_DEPTH   => NUM_OF_LEDS-1,
 		SR_INIT    => '1' 	
 	)
 	port map (
@@ -165,7 +178,7 @@ end generate;
 	
 	SHIFT_RETURN : ShiftRegister -- right to left
     Generic  map(
-		SR_DEPTH   => 16,
+		SR_DEPTH   => NUM_OF_LEDS-1,
 		SR_INIT    => '0' 	
 	)
 	port map ( --USARE LA FRECCIA VERSO DX NEL PORTMAP =>
