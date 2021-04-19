@@ -13,7 +13,7 @@
 *.vdi
 
 ## bitstream
-*.bit
+#*.bit
 *.bin
 *.mcs
 *.svf
