@@ -71,3 +71,6 @@ xvlog.*
 
 ## checkpoint files
 *.dcp
+
+## IP core folder
+/IPs_DESD/*
