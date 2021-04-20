@@ -88,3 +88,7 @@
 #DESD IPs
 #########
 IPs_DESD/
+#########
+#binaries
+#########
+!**.bit
