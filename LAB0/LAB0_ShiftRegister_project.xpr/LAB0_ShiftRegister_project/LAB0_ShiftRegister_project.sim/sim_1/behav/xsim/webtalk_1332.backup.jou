@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Thu Mar  7 16:50:16 2019
+# Process ID: 1332
+# Current directory: C:/Users/nicol/Desktop/POLIMI/Didattica/Digital_Electronic_System_Design/ShiftRegister/ShiftRegister.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/nicol/Desktop/POLIMI/Didattica/Digital_Electronic_System_Design/ShiftRegister/ShiftRegister.sim/sim_1/behav/xsim/xsim.dir/tb_ShiftRegister_v2_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/nicol/Desktop/POLIMI/Didattica/Digital_Electronic_System_Design/ShiftRegister/ShiftRegister.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/nicol/Desktop/POLIMI/Didattica/Digital_Electronic_System_Design/ShiftRegister/ShiftRegister.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/nicol/Desktop/POLIMI/Didattica/Digital_Electronic_System_Design/ShiftRegister/ShiftRegister.sim/sim_1/behav/xsim/xsim.dir/tb_ShiftRegister_v2_behav/webtalk/xsim_webtalk.tcl -notrace

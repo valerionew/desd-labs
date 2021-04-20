@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Mar  8 08:36:56 2021
+# Process ID: 8974
+# Current directory: /tmp/LAB0 - 02 - Pulse Width Modulator/LAB0_PulseWidthModulator_project/LAB0_PulseWidthModulator_project.runs/synth_1
+# Command line: vivado -log PulseWidthModulator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PulseWidthModulator.tcl
+# Log file: /tmp/LAB0 - 02 - Pulse Width Modulator/LAB0_PulseWidthModulator_project/LAB0_PulseWidthModulator_project.runs/synth_1/PulseWidthModulator.vds
+# Journal file: /tmp/LAB0 - 02 - Pulse Width Modulator/LAB0_PulseWidthModulator_project/LAB0_PulseWidthModulator_project.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source PulseWidthModulator.tcl -notrace

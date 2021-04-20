@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Mar  8 08:28:43 2021
+# Process ID: 7866
+# Current directory: /home/nicola/Documents/vivado
+# Command line: vivado
+# Log file: /home/nicola/Documents/vivado/vivado.log
+# Journal file: /home/nicola/Documents/vivado/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /tmp/LAB0_ShiftRegister_project/LAB0_ShiftRegister_project.xpr
+update_compile_order -fileset sources_1
+archive_project /tmp/LAB0_ShiftRegister_project.xpr.zip -force -exclude_run_results
