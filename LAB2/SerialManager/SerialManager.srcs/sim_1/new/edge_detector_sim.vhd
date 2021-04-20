@@ -43,6 +43,10 @@ signal pos_edge_trigger : STD_LOGIC;
 signal neg_edge_trigger : STD_LOGIC;
 
 component edge_detector is
+    Generic (
+      sys_clk_freq            : integer := 100_000_000;  
+      debounce_inhibit_ms     : integer := 10         
+    );
     Port ( 
 --------------------------------------------
 
@@ -62,6 +66,10 @@ end component;
 
 begin
 dut : edge_detector
+generic map (
+      sys_clk_freq => 100_000_000,  
+      debounce_inhibit_ms   => 1         
+    )
 port map (
       clk => clk,
       reset  => reset,
@@ -78,6 +86,18 @@ port map (
         begin
          reset <= '0';
          wait for 30 ns;
+         in_port <= '1';
+         wait for 50 ns;
+         in_port <= '0';
+         wait for 30 ns;
+         in_port <= '1';
+         wait for 50 ns;
+         in_port <= '0';
+         wait for 30 ns;
+         in_port <= '1';
+         wait for 50 ns;
+         in_port <= '0';
+         wait for 1 ms;
          in_port <= '1';
          wait for 50 ns;
          in_port <= '0';

@@ -7,7 +7,8 @@
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2020.2"
+      "tool_version": "2020.2",
+      "validated": "true"
     },
     "design_tree": {
       "clk_wiz_0": "",
@@ -15,7 +16,6 @@
       "AXI4Stream_UART_0": "",
       "led_latch_0": "",
       "switch_controller_0": "",
-      "debouncer_0": "",
       "edge_detector_0": ""
     },
     "interface_ports": {
@@ -29,8 +29,20 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_sys_clock",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
           },
           "PHASE": {
             "value": "0.000"
@@ -41,6 +53,10 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
           "POLARITY": {
             "value": "ACTIVE_HIGH"
           }
@@ -358,25 +374,6 @@
           }
         }
       },
-      "debouncer_0": {
-        "vlnv": "xilinx.com:module_ref:debouncer:1.0",
-        "xci_name": "design_1_debouncer_0_0",
-        "xci_path": "ip\\design_1_debouncer_0_0\\design_1_debouncer_0_0.xci",
-        "inst_hier_path": "debouncer_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "debouncer",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "button": {
-            "direction": "I"
-          },
-          "debounced": {
-            "direction": "O"
-          }
-        }
-      },
       "edge_detector_0": {
         "vlnv": "xilinx.com:module_ref:edge_detector:1.0",
         "xci_name": "design_1_edge_detector_0_0",
@@ -395,12 +392,30 @@
               "ASSOCIATED_RESET": {
                 "value": "reset",
                 "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
               }
             }
           },
           "reset": {
             "type": "rst",
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH",
+                "value_src": "const_prop"
+              }
+            }
           },
           "in_port": {
             "direction": "I"
@@ -488,12 +503,6 @@
           "switch_controller_0/M_AXIS_ARESETN"
         ]
       },
-      "debouncer_0_debounced": {
-        "ports": [
-          "debouncer_0/debounced",
-          "edge_detector_0/in_port"
-        ]
-      },
       "edge_detector_0_pos_edge_trigger": {
         "ports": [
           "edge_detector_0/pos_edge_trigger",
@@ -509,7 +518,7 @@
       "btnD_1": {
         "ports": [
           "btnD",
-          "debouncer_0/button"
+          "edge_detector_0/in_port"
         ]
       }
     }
