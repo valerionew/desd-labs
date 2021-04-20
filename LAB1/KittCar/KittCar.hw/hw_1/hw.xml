@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Product Version: Vivado v2020.2 (64-bit)                     -->
+<!--                                                              -->
+<!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.        -->
+
+<hwsession version="1" minor="2">
+  <device name="xc7a35t_0" gui_info="dashboard1=hw_ila_1[xc7a35t_0/hw_ila_1/Settings=ILA_SETTINGS_1;xc7a35t_0/hw_ila_1/Status=ILA_STATUS_1;xc7a35t_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xc7a35t_0/hw_ila_1/Waveform=ILA_WAVE_1;xc7a35t_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;]"/>
+  <ObjectList object_type="hw_device" gui_info="">
+    <Object name="xc7a35t_0" gui_info="">
+      <Properties Property="FULL_PROBES.FILE" value=""/>
+      <Properties Property="PROBES.FILE" value=""/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/$_project_name_.bit"/>
+      <Properties Property="SLR.COUNT" value="1"/>
+    </Object>
+  </ObjectList>
+  <ObjectList object_type="hw_ila" gui_info="">
+    <Object name="" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+    <Object name="u_ila_0" gui_info="">
+      <Properties Property="CONTROL.TRIGGER_CONDITION" value="AND"/>
+      <Properties Property="CORE_REFRESH_RATE_MS" value="500"/>
+    </Object>
+  </ObjectList>
+  <probeset name="hw project" active="false">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[15:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="Pout_return[15]"/>
+        <net name="Pout_return[14]"/>
+        <net name="Pout_return[13]"/>
+        <net name="Pout_return[12]"/>
+        <net name="Pout_return[11]"/>
+        <net name="Pout_return[10]"/>
+        <net name="Pout_return[9]"/>
+        <net name="Pout_return[8]"/>
+        <net name="Pout_return[7]"/>
+        <net name="Pout_return[6]"/>
+        <net name="Pout_return[5]"/>
+        <net name="Pout_return[4]"/>
+        <net name="Pout_return[3]"/>
+        <net name="Pout_return[2]"/>
+        <net name="Pout_return[1]"/>
+        <net name="Pout_return[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe4[15:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="Pout_send[15]"/>
+        <net name="Pout_send[14]"/>
+        <net name="Pout_send[13]"/>
+        <net name="Pout_send[12]"/>
+        <net name="Pout_send[11]"/>
+        <net name="Pout_send[10]"/>
+        <net name="Pout_send[9]"/>
+        <net name="Pout_send[8]"/>
+        <net name="Pout_send[7]"/>
+        <net name="Pout_send[6]"/>
+        <net name="Pout_send[5]"/>
+        <net name="Pout_send[4]"/>
+        <net name="Pout_send[3]"/>
+        <net name="Pout_send[2]"/>
+        <net name="Pout_send[1]"/>
+        <net name="Pout_send[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe3[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="first_counter_reg[31]"/>
+        <net name="first_counter_reg[30]"/>
+        <net name="first_counter_reg[29]"/>
+        <net name="first_counter_reg[28]"/>
+        <net name="first_counter_reg[27]"/>
+        <net name="first_counter_reg[26]"/>
+        <net name="first_counter_reg[25]"/>
+        <net name="first_counter_reg[24]"/>
+        <net name="first_counter_reg[23]"/>
+        <net name="first_counter_reg[22]"/>
+        <net name="first_counter_reg[21]"/>
+        <net name="first_counter_reg[20]"/>
+        <net name="first_counter_reg[19]"/>
+        <net name="first_counter_reg[18]"/>
+        <net name="first_counter_reg[17]"/>
+        <net name="first_counter_reg[16]"/>
+        <net name="first_counter_reg[15]"/>
+        <net name="first_counter_reg[14]"/>
+        <net name="first_counter_reg[13]"/>
+        <net name="first_counter_reg[12]"/>
+        <net name="first_counter_reg[11]"/>
+        <net name="first_counter_reg[10]"/>
+        <net name="first_counter_reg[9]"/>
+        <net name="first_counter_reg[8]"/>
+        <net name="first_counter_reg[7]"/>
+        <net name="first_counter_reg[6]"/>
+        <net name="first_counter_reg[5]"/>
+        <net name="first_counter_reg[4]"/>
+        <net name="first_counter_reg[3]"/>
+        <net name="first_counter_reg[2]"/>
+        <net name="first_counter_reg[1]"/>
+        <net name="first_counter_reg[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe2[15:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="leds_OBUF[15]"/>
+        <net name="leds_OBUF[14]"/>
+        <net name="leds_OBUF[13]"/>
+        <net name="leds_OBUF[12]"/>
+        <net name="leds_OBUF[11]"/>
+        <net name="leds_OBUF[10]"/>
+        <net name="leds_OBUF[9]"/>
+        <net name="leds_OBUF[8]"/>
+        <net name="leds_OBUF[7]"/>
+        <net name="leds_OBUF[6]"/>
+        <net name="leds_OBUF[5]"/>
+        <net name="leds_OBUF[4]"/>
+        <net name="leds_OBUF[3]"/>
+        <net name="leds_OBUF[2]"/>
+        <net name="leds_OBUF[1]"/>
+        <net name="leds_OBUF[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe5[31:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq32&apos;hXXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="second_counter_reg[31]"/>
+        <net name="second_counter_reg[30]"/>
+        <net name="second_counter_reg[29]"/>
+        <net name="second_counter_reg[28]"/>
+        <net name="second_counter_reg[27]"/>
+        <net name="second_counter_reg[26]"/>
+        <net name="second_counter_reg[25]"/>
+        <net name="second_counter_reg[24]"/>
+        <net name="second_counter_reg[23]"/>
+        <net name="second_counter_reg[22]"/>
+        <net name="second_counter_reg[21]"/>
+        <net name="second_counter_reg[20]"/>
+        <net name="second_counter_reg[19]"/>
+        <net name="second_counter_reg[18]"/>
+        <net name="second_counter_reg[17]"/>
+        <net name="second_counter_reg[16]"/>
+        <net name="second_counter_reg[15]"/>
+        <net name="second_counter_reg[14]"/>
+        <net name="second_counter_reg[13]"/>
+        <net name="second_counter_reg[12]"/>
+        <net name="second_counter_reg[11]"/>
+        <net name="second_counter_reg[10]"/>
+        <net name="second_counter_reg[9]"/>
+        <net name="second_counter_reg[8]"/>
+        <net name="second_counter_reg[7]"/>
+        <net name="second_counter_reg[6]"/>
+        <net name="second_counter_reg[5]"/>
+        <net name="second_counter_reg[4]"/>
+        <net name="second_counter_reg[3]"/>
+        <net name="second_counter_reg[2]"/>
+        <net name="second_counter_reg[1]"/>
+        <net name="second_counter_reg[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq16&apos;hXXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[15:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq16&apos;hXXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="sw_IBUF[15]"/>
+        <net name="sw_IBUF[14]"/>
+        <net name="sw_IBUF[13]"/>
+        <net name="sw_IBUF[12]"/>
+        <net name="sw_IBUF[11]"/>
+        <net name="sw_IBUF[10]"/>
+        <net name="sw_IBUF[9]"/>
+        <net name="sw_IBUF[8]"/>
+        <net name="sw_IBUF[7]"/>
+        <net name="sw_IBUF[6]"/>
+        <net name="sw_IBUF[5]"/>
+        <net name="sw_IBUF[4]"/>
+        <net name="sw_IBUF[3]"/>
+        <net name="sw_IBUF[2]"/>
+        <net name="sw_IBUF[1]"/>
+        <net name="sw_IBUF[0]"/>
+      </nets>
+    </probe>
+  </probeset>
+</hwsession>

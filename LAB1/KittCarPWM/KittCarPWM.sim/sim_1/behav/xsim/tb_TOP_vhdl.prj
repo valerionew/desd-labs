@@ -1,0 +1,9 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../LAB1_C3.srcs/sources_1/imports/SOURCES/Kitt_Mux.vhd" \
+"../../../../LAB1_C3.srcs/sources_1/imports/SOURCES/PWM_tails.vhd" \
+"../../../../LAB1_C3.srcs/sources_1/new/TOP_KIT.vhd" \
+"../../../../LAB1_C3.srcs/sim_1/new/tb_TOP.vhd" \
+
+# Do not sort compile order
+nosort

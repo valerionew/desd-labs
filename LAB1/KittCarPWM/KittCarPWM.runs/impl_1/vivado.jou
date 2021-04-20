@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Apr 20 14:19:14 2021
+# Process ID: 1512
+# Current directory: C:/Users/valer/Documents/desd-labs/LAB1_C3/LAB1_C3.runs/impl_1
+# Command line: vivado.exe -log TOP_KIT.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source TOP_KIT.tcl -notrace
+# Log file: C:/Users/valer/Documents/desd-labs/LAB1_C3/LAB1_C3.runs/impl_1/TOP_KIT.vdi
+# Journal file: C:/Users/valer/Documents/desd-labs/LAB1_C3/LAB1_C3.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source TOP_KIT.tcl -notrace
