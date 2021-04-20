@@ -92,7 +92,7 @@ set_property ip_output_repo c:/Users/valer/Documents/desd-labs/LAB2/SerialManage
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib c:/Users/valer/Documents/desd-labs/LAB2/SerialManager/SerialManager.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+read_vhdl -library xil_defaultlib C:/Users/valer/Documents/desd-labs/LAB2/SerialManager/SerialManager.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
 add_files C:/Users/valer/Documents/desd-labs/LAB2/SerialManager/SerialManager.srcs/sources_1/bd/design_1/design_1.bd
 set_property used_in_implementation false [get_files -all c:/Users/valer/Documents/desd-labs/LAB2/SerialManager/SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/valer/Documents/desd-labs/LAB2/SerialManager/SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc]

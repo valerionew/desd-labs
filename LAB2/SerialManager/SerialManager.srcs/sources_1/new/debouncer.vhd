@@ -42,7 +42,7 @@ architecture Behavioral of debouncer is
 
 begin
 -- lmao we'll do smething at some point 
--- until then we pipe out what we get in
+-- until then we pipe out what we got in
 debounced <= button;
 
 end Behavioral;
