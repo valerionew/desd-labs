@@ -1,0 +1,309 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xAB809D3840192683",
+      "device": "xc7a35tcpg236-1",
+      "gen_directory": "../../../../SerialManager.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2020.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "clk_wiz_0": "",
+      "proc_sys_reset_0": "",
+      "AXI4Stream_UART_0": "",
+      "led_latch_0": ""
+    },
+    "interface_ports": {
+      "usb_uart": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:uart_rtl:1.0"
+      }
+    },
+    "ports": {
+      "sys_clock": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_sys_clock",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000"
+          }
+        }
+      },
+      "reset": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "leds": {
+        "direction": "O",
+        "left": "15",
+        "right": "0"
+      }
+    },
+    "components": {
+      "clk_wiz_0": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "design_1_clk_wiz_0_0",
+        "xci_path": "ip\\design_1_clk_wiz_0_0\\design_1_clk_wiz_0_0.xci",
+        "inst_hier_path": "clk_wiz_0",
+        "parameters": {
+          "CLK_IN1_BOARD_INTERFACE": {
+            "value": "sys_clock"
+          },
+          "RESET_BOARD_INTERFACE": {
+            "value": "reset"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
+      "proc_sys_reset_0": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "xci_name": "design_1_proc_sys_reset_0_0",
+        "xci_path": "ip\\design_1_proc_sys_reset_0_0\\design_1_proc_sys_reset_0_0.xci",
+        "inst_hier_path": "proc_sys_reset_0",
+        "parameters": {
+          "RESET_BOARD_INTERFACE": {
+            "value": "reset"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
+      "AXI4Stream_UART_0": {
+        "vlnv": "DigiLAB:ip:AXI4Stream_UART:1.1",
+        "xci_name": "design_1_AXI4Stream_UART_0_0",
+        "xci_path": "ip\\design_1_AXI4Stream_UART_0_0\\design_1_AXI4Stream_UART_0_0.xci",
+        "inst_hier_path": "AXI4Stream_UART_0",
+        "parameters": {
+          "UART_BOARD_INTERFACE": {
+            "value": "usb_uart"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
+      "led_latch_0": {
+        "vlnv": "xilinx.com:module_ref:led_latch:1.0",
+        "xci_name": "design_1_led_latch_0_2",
+        "xci_path": "ip\\design_1_led_latch_0_2\\design_1_led_latch_0_2.xci",
+        "inst_hier_path": "led_latch_0",
+        "parameters": {
+          "NUM_BOARD_LEDS": {
+            "value": "16"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "led_latch",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "S_AXIS": {
+            "mode": "Slave",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+            "parameters": {
+              "TDATA_NUM_BYTES": {
+                "value": "1",
+                "value_src": "auto"
+              },
+              "TDEST_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TID_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TUSER_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TREADY": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TSTRB": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TKEEP": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TLAST": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            },
+            "port_maps": {
+              "TDATA": {
+                "physical_name": "S_AXIS_TDATA",
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "TVALID": {
+                "physical_name": "S_AXIS_TVALID",
+                "direction": "I"
+              },
+              "TREADY": {
+                "physical_name": "S_AXIS_TREADY",
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "ports": {
+          "S_AXIS_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "S_AXIS",
+                "value_src": "constant"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "S_AXIS_ARESETN",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_0_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "S_AXIS_ARESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "LEDS": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "AXI4Stream_UART_0_M00_AXIS_RX": {
+        "interface_ports": [
+          "led_latch_0/S_AXIS",
+          "AXI4Stream_UART_0/M00_AXIS_RX"
+        ]
+      },
+      "AXI4Stream_UART_0_UART": {
+        "interface_ports": [
+          "usb_uart",
+          "AXI4Stream_UART_0/UART"
+        ]
+      }
+    },
+    "nets": {
+      "sys_clock_1": {
+        "ports": [
+          "sys_clock",
+          "clk_wiz_0/clk_in1"
+        ]
+      },
+      "reset_1": {
+        "ports": [
+          "reset",
+          "clk_wiz_0/reset",
+          "proc_sys_reset_0/ext_reset_in"
+        ]
+      },
+      "clk_wiz_0_clk_out1": {
+        "ports": [
+          "clk_wiz_0/clk_out1",
+          "proc_sys_reset_0/slowest_sync_clk",
+          "AXI4Stream_UART_0/clk_uart",
+          "AXI4Stream_UART_0/m00_axis_rx_aclk",
+          "AXI4Stream_UART_0/s00_axis_tx_aclk",
+          "led_latch_0/S_AXIS_ACLK"
+        ]
+      },
+      "proc_sys_reset_0_peripheral_reset": {
+        "ports": [
+          "proc_sys_reset_0/peripheral_reset",
+          "AXI4Stream_UART_0/rst"
+        ]
+      },
+      "clk_wiz_0_locked": {
+        "ports": [
+          "clk_wiz_0/locked",
+          "proc_sys_reset_0/dcm_locked"
+        ]
+      },
+      "proc_sys_reset_0_peripheral_aresetn": {
+        "ports": [
+          "proc_sys_reset_0/peripheral_aresetn",
+          "AXI4Stream_UART_0/m00_axis_rx_aresetn",
+          "AXI4Stream_UART_0/s00_axis_tx_aresetn",
+          "led_latch_0/S_AXIS_ARESETN"
+        ]
+      },
+      "led_latch_0_LEDS": {
+        "ports": [
+          "led_latch_0/LEDS",
+          "leds"
+        ]
+      }
+    }
+  }
+}

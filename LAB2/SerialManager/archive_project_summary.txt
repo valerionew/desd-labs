@@ -1,0 +1,327 @@
+***************************************************************************************
+*                      PROJECT ARCHIVE SUMMARY REPORT
+*
+*                      (archive_project_summary.txt)
+*
+*  PLEASE READ THIS REPORT TO GET THE DETAILED INFORMATION ABOUT THE PROJECT DATA THAT
+*  WAS ARCHIVED FOR THE CURRENT PROJECT
+*
+* The report is divided into following five sections:-
+*
+* Section (1) - PROJECT INFORMATION
+*  This section provides the details of the current project that was archived
+*
+* Section (2) - INCLUDED/EXCLUDED RUNS
+*  This section summarizes the list of design runs for which the results were included
+*  or excluded from the archive
+*
+* Section (3) - ARCHIVED SOURCES
+*  This section summarizes the list of files that were added to the archive
+*
+* Section (3.1) - INCLUDE FILES
+*  This section summarizes the list of 'include' files that were added to the archive
+*
+* Section (3.1.1) - INCLUDE_DIRS SETTINGS
+*  This section summarizes the 'verilog include directory' path settings, if any
+*
+* Section (3.2) - REMOTE SOURCES
+*  This section summarizes the list of referenced 'remote' files that were 'imported'
+*  into the archived project
+*
+* Section (3.3) - SOURCES SUMMARY
+*  This section summarizes the list of all the files present in the archive
+*
+* Section (3.4) - REMOTE IP DEFINITIONS
+*  This section summarizes the list of all the remote IP's present in the archive
+*
+* Section (4) - JOURNAL/LOG FILES
+*  This section summarizes the list of journal/log files that were added to the archive
+*
+* Section (5) - CONFIGURATION SETTINGS/FILES
+*  This section summarizes the configuration settings/files that were added to the archive
+*
+***************************************************************************************
+
+Section (1) - PROJECT INFORMATION
+---------------------------------
+Name      = SerialManager
+Directory = C:/Users/Federico/Desktop/SerialManager
+
+WARNING: Please verify the compiled library directory path for the following property in the
+         current project. The path may point to an invalid location after opening this project.
+         This could happen if the project was unarchived in a location where this path is not
+         accessible. To resolve this issue, please set this property with the desired path
+         before launching simulation:-
+
+Property = compxlib.xsim_compiled_library_dir
+Path     = 
+
+Section (2) - Excluded Runs
+---------------------------
+The run results were excluded for the following runs in the archived project:-
+
+<synth_1>
+<design_1_proc_sys_reset_0_0_synth_1>
+<design_1_AXI4Stream_UART_0_0_synth_1>
+<design_1_clk_wiz_0_0_synth_1>
+<design_1_led_latch_0_2_synth_1>
+<impl_1>
+<design_1_proc_sys_reset_0_0_impl_1>
+<design_1_AXI4Stream_UART_0_0_impl_1>
+<design_1_clk_wiz_0_0_impl_1>
+<design_1_led_latch_0_2_impl_1>
+
+Section (3) - ARCHIVED SOURCES
+------------------------------
+The following sub-sections describes the list of sources that were archived for the current project:-
+
+Section (3.1) - INCLUDE FILES
+-----------------------------
+List of referenced 'RTL Include' files that were 'imported' into the archived project:-
+
+None
+
+Section (3.1.1) - INCLUDE_DIRS SETTINGS
+---------------------------------------
+List of the "INCLUDE_DIRS" fileset property settings that may or may not be applicable in the archived
+project, since most the 'RTL Include' files referenced in the original project were 'imported' into the
+archived project.
+
+<sources_1> fileset RTL include directory paths (INCLUDE_DIRS):-
+None
+
+<sim_1> fileset RTL include directory paths (INCLUDE_DIRS):-
+None
+
+Section (3.2) - REMOTE SOURCES
+------------------------------
+List of referenced 'remote' design files that were 'imported' into the archived project:-
+
+<design_1_AXI4Stream_UART_0_0>
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0_M00_AXIS_RX.vhd
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0_S00_AXIS_TX.vhd
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/UART_Engine.vhd
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/UART_Manager.vhd
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0.vhd
+
+<design_1_clk_wiz_0_0>
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_7s_mmcm.vh
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_7s_pll.vh
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_mmcm.vh
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_pll.vh
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_plus_pll.vh
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_plus_mmcm.vh
+
+<design_1_led_latch_0_2>
+None
+
+<design_1_proc_sys_reset_0_0>
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd
+
+<constrs_1>
+None
+
+<sim_1>
+None
+
+<sources_1>
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_7s_mmcm.vh
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_7s_pll.vh
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_mmcm.vh
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_pll.vh
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_plus_pll.vh
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_plus_mmcm.vh
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0_M00_AXIS_RX.vhd
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0_S00_AXIS_TX.vhd
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/UART_Engine.vhd
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/UART_Manager.vhd
+c:/Users/Federico/Desktop/SerialManager/.Xil/Vivado-6260-FexCatta-PC/PrjAr/_X_/SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0.vhd
+
+<utils_1>
+None
+
+Section (3.3) - SOURCES SUMMARY
+-------------------------------
+List of all the source files present in the archived project:-
+
+<sources_1>
+./SerialManager.srcs/sources_1/new/led_latch.vhd
+./SerialManager.srcs/sources_1/bd/design_1/design_1.bd
+./SerialManager.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xci
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_7s_mmcm.vh
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_7s_pll.vh
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_mmcm.vh
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_pll.vh
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_plus_pll.vh
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_plus_mmcm.vh
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.dcp
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_stub.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_stub.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_sim_netlist.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_sim_netlist.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_ooc.xdc
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xml
+./SerialManager.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xci
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_board.xdc
+./SerialManager.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd
+./SerialManager.gen/sources_1/bd/design_1/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/sim/design_1_proc_sys_reset_0_0.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.dcp
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_stub.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_stub.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_sim_netlist.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_sim_netlist.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xdc
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/synth/design_1_proc_sys_reset_0_0.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_ooc.xdc
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xml
+./SerialManager.srcs/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0.xci
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0_board.xdc
+./SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0_M00_AXIS_RX.vhd
+./SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0_S00_AXIS_TX.vhd
+./SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/UART_Engine.vhd
+./SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/UART_Manager.vhd
+./SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/sim/design_1_AXI4Stream_UART_0_0.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0.dcp
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0_stub.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0_stub.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0_sim_netlist.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0_sim_netlist.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/synth/design_1_AXI4Stream_UART_0_0.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0.xml
+./SerialManager.srcs/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2.xci
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/sim/design_1_led_latch_0_2.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2.dcp
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2_stub.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2_stub.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2_sim_netlist.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2_sim_netlist.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/synth/design_1_led_latch_0_2.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2.xml
+./SerialManager.gen/sources_1/bd/design_1/synth/design_1.vhd
+./SerialManager.gen/sources_1/bd/design_1/sim/design_1.vhd
+./SerialManager.gen/sources_1/bd/design_1/design_1_ooc.xdc
+./SerialManager.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+./SerialManager.gen/sources_1/bd/design_1/design_1.bda
+./SerialManager.gen/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+./SerialManager.gen/sources_1/bd/design_1/synth/design_1.hwdef
+./SerialManager.gen/sources_1/bd/design_1/sim/design_1.protoinst
+./SerialManager.srcs/sources_1/imports/design_1_wrapper.vhd
+
+<constrs_1>
+./SerialManager.srcs/constrs_1/new/pins.xdc
+
+<sim_1>
+None
+
+<utils_1>
+None
+
+<design_1_proc_sys_reset_0_0>
+./SerialManager.srcs/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xci
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_board.xdc
+./SerialManager.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd
+./SerialManager.gen/sources_1/bd/design_1/ipshared/8842/hdl/proc_sys_reset_v5_0_vh_rfs.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/sim/design_1_proc_sys_reset_0_0.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.dcp
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_stub.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_stub.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_sim_netlist.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_sim_netlist.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xdc
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/synth/design_1_proc_sys_reset_0_0.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0_ooc.xdc
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xml
+
+<design_1_AXI4Stream_UART_0_0>
+./SerialManager.srcs/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0.xci
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0_board.xdc
+./SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0_M00_AXIS_RX.vhd
+./SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0_S00_AXIS_TX.vhd
+./SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/UART_Engine.vhd
+./SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/UART_Manager.vhd
+./SerialManager.gen/sources_1/bd/design_1/ipshared/453d/hdl/AXI4Stream_UART_v1_0.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/sim/design_1_AXI4Stream_UART_0_0.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0.dcp
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0_stub.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0_stub.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0_sim_netlist.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0_sim_netlist.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/synth/design_1_AXI4Stream_UART_0_0.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_0/design_1_AXI4Stream_UART_0_0.xml
+
+<design_1_clk_wiz_0_0>
+./SerialManager.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xci
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_7s_mmcm.vh
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_7s_pll.vh
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_mmcm.vh
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_pll.vh
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_plus_pll.vh
+./SerialManager.gen/sources_1/bd/design_1/ipshared/d0f7/mmcm_pll_drp_func_us_plus_mmcm.vh
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.dcp
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_stub.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_stub.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_sim_netlist.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_sim_netlist.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_ooc.xdc
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xml
+
+<design_1_led_latch_0_2>
+./SerialManager.srcs/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2.xci
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/sim/design_1_led_latch_0_2.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2.dcp
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2_stub.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2_stub.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2_sim_netlist.v
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2_sim_netlist.vhdl
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/synth/design_1_led_latch_0_2.vhd
+./SerialManager.gen/sources_1/bd/design_1/ip/design_1_led_latch_0_2/design_1_led_latch_0_2.xml
+
+Section (3.4) - REMOTE IP DEFINITIONS
+-------------------------------------
+List of all the remote IP's present in the archived project:-
+
+<sources_1>
+./SerialManager.ipdefs/ip_repo/AXI4-Stream_UART
+
+<design_1_proc_sys_reset_0_0>
+None
+
+<design_1_AXI4Stream_UART_0_0>
+None
+
+<design_1_clk_wiz_0_0>
+None
+
+<design_1_led_latch_0_2>
+None
+
+./SerialManager.board/basys3
+
+Section (4) - JOURNAL/LOG FILES
+-------------------------------
+List of Journal/Log files that were added to the archived project:-
+
+Source File = C:/Users/Federico/Desktop/SerialManager/vivado.jou
+Archived Location = ./SerialManager/vivado.jou
+
+Source File = C:/Users/Federico/Desktop/SerialManager/vivado.log
+Archived Location = ./SerialManager/vivado.log
+
+Section (5) - CONFIGURATION SETTINGS/FILES
+------------------------------------------
+List of configuration settings/files that were added to the archived project:-
+
+
