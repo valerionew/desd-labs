@@ -35,6 +35,43 @@
 !*.ooc
 #########
 #System Generator
+#########################################################################################################
+##	This is an example .gitignore file for Vivado, please treat it as an example as 
+##	it might not be complete. In addition, XAPP 1165 should be followed.
+#########################################################################################################
+#########
+#Exclude all
+#########
+*
+!*/
+!.gitignore
+###########################################################################
+##	VIVADO
+###########################################################################
+#########
+#Source files:
+#########
+#Do NOT ignore VHDL, Verilog, block diagrams or EDIF files.
+!*.vhd
+!*.v
+!*.bd
+!*.edif
+#########
+#IP files
+#########
+#.xci: synthesis and implemented not possible - you need to return back to the previous version to generate output products
+#.xci + .dcp: implementation possible but not re-synthesis
+#*.xci(www.spiritconsortium.org)
+!*.xci
+#*.dcp(checkpoint files)
+!*.dcp
+!*.vds
+!*.pb
+#All bd comments and layout coordinates are stored within .ui
+!*.ui
+!*.ooc
+#########
+#System Generator
 #########
 !*.mdl
 !*.slx
@@ -73,7 +110,7 @@
 #########
 #Reports
 #########
-*.rpt
+!*.rpt
 !*.txt
 !*.vdi
 #########
@@ -84,7 +121,6 @@
 !*.elf
 !*.bmm
 !*.xmp
-#########
 #DESD IPs
 #########
 IPs_DESD/

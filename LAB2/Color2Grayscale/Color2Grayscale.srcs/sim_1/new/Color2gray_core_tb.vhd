@@ -31,15 +31,14 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Color2gray_core_tb is
+entity color2gray_core_tb is
 	Generic (
 		-- Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
 		C_M_AXIS_TDATA_WIDTH	: integer	:= 8
 	);
---  Port ( );
-end Color2gray_core_tb;
+end color2gray_core_tb;
 
-architecture Behavioral of Color2gray_core_tb is
+architecture Behavioral of color2gray_core_tb is
 
 signal  ch0 : STD_LOGIC_VECTOR (7 downto 0) := (Others => '0');
 signal  ch1 : STD_LOGIC_VECTOR (7 downto 0) := (Others => '0');
@@ -52,7 +51,7 @@ signal  M_AXIS_TVALID	:   STD_LOGIC := '1';
 signal  M_AXIS_TDATA	:   STD_LOGIC_VECTOR(C_M_AXIS_TDATA_WIDTH-1 DOWNTO 0);
 signal  M_AXIS_TREADY	:  	STD_LOGIC := '1';
 
-component Color2gray_core is
+component Color2graycore is
 	Generic (
 		-- Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
 		C_M_AXIS_TDATA_WIDTH	: integer	:= 8
@@ -81,7 +80,7 @@ end component;
 
 begin
 
-dut : Color2gray_core
+dut : Color2graycore
 	Generic map (
 		-- Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
 		C_M_AXIS_TDATA_WIDTH	=> 8
@@ -111,7 +110,18 @@ dut : Color2gray_core
          ch0 <= std_logic_vector(to_unsigned(0,8));
          ch1 <= std_logic_vector(to_unsigned(10,8));
          ch2 <= std_logic_vector(to_unsigned(20,8));
+         wait for 10 ns;
          valid <= '1';
+         wait for 10 ns;
+         valid <= '0';
+         wait for 30 ns;
+         ch0 <= std_logic_vector(to_unsigned(0,8));
+         ch1 <= std_logic_vector(to_unsigned(5,8));
+         ch2 <= std_logic_vector(to_unsigned(10,8));
+         wait for 10 ns;
+         valid <= '1';
+         wait for 10 ns;
+         valid <= '0';
          wait;
         end process;
 

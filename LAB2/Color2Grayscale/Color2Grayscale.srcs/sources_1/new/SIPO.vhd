@@ -66,6 +66,7 @@ type pixel_type is array (2 downto 0) of STD_LOGIC_VECTOR (C_S_AXIS_TDATA_WIDTH-
 signal pixel : pixel_type := (Others => (Others => '0'));
 
 signal S_AXIS_TREADY_sig : std_logic := '0';
+signal valid_sig : std_logic := '0';
 signal index : integer := 0;
 
 
@@ -75,10 +76,8 @@ begin
 if rising_edge(S_AXIS_ACLK) then
   if S_AXIS_ARESETN = '0' then
       S_AXIS_TREADY_sig <= '0';
-      ch0 <= (Others => '0');
-      ch1 <= (Others => '0');
-      ch2 <= (Others => '0');
-      valid <= '0';
+      pixel <= (Others => (Others => '0'));
+      valid_sig <= '0';
   else 
   
     S_AXIS_TREADY_sig <= '1';
@@ -86,10 +85,10 @@ if rising_edge(S_AXIS_ACLK) then
     if S_AXIS_TVALID = '1' and S_AXIS_TREADY_sig = '1' then
         pixel(index) <= S_AXIS_TDATA;
         if index = 2 then
-          valid <= '1';
+          valid_sig <= '1';
           index <= 0;
         else
-          valid <= '0';
+          valid_sig <= '0';
           index <= index + 1 ;
         end if;
         
@@ -99,6 +98,13 @@ if rising_edge(S_AXIS_ACLK) then
 
 end if;
 end process;
+
+valid <= valid_sig;
+S_AXIS_TREADY <= S_AXIS_TREADY_sig;
+ch0<=pixel(0);
+ch1<=pixel(1);
+ch2<=pixel(2);
+
 
 
 end Behavioral;

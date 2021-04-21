@@ -7,15 +7,14 @@
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2020.2",
-      "validated": "true"
+      "tool_version": "2020.2"
     },
     "design_tree": {
       "proc_sys_reset_0": "",
       "clk_wiz_0": "",
       "AXI4Stream_UART_0": "",
-      "Color2gray_core_0": "",
-      "SIPO_0": ""
+      "SIPO_0": "",
+      "Color2graycore_0": ""
     },
     "interface_ports": {
       "usb_uart": {
@@ -28,20 +27,8 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
-          "CLK_DOMAIN": {
-            "value": "design_1_sys_clock",
-            "value_src": "default"
-          },
           "FREQ_HZ": {
             "value": "100000000"
-          },
-          "FREQ_TOLERANCE_HZ": {
-            "value": "0",
-            "value_src": "default"
-          },
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
           },
           "PHASE": {
             "value": "0.000"
@@ -52,10 +39,6 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
-          "INSERT_VIP": {
-            "value": "0",
-            "value_src": "default"
-          },
           "POLARITY": {
             "value": "ACTIVE_HIGH"
           }
@@ -108,14 +91,125 @@
           }
         }
       },
-      "Color2gray_core_0": {
-        "vlnv": "xilinx.com:module_ref:Color2gray_core:1.0",
-        "xci_name": "design_1_Color2gray_core_0_0",
-        "xci_path": "ip\\design_1_Color2gray_core_0_0\\design_1_Color2gray_core_0_0.xci",
-        "inst_hier_path": "Color2gray_core_0",
+      "SIPO_0": {
+        "vlnv": "xilinx.com:module_ref:SIPO:1.0",
+        "xci_name": "design_1_SIPO_0_0",
+        "xci_path": "ip\\design_1_SIPO_0_0\\design_1_SIPO_0_0.xci",
+        "inst_hier_path": "SIPO_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "Color2gray_core",
+          "ref_name": "SIPO",
+          "boundary_crc": "0x0"
+        },
+        "interface_ports": {
+          "S_AXIS": {
+            "mode": "Slave",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+            "parameters": {
+              "TDATA_NUM_BYTES": {
+                "value": "1",
+                "value_src": "auto"
+              },
+              "TDEST_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TID_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "TUSER_WIDTH": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TREADY": {
+                "value": "1",
+                "value_src": "constant"
+              },
+              "HAS_TSTRB": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TKEEP": {
+                "value": "0",
+                "value_src": "constant"
+              },
+              "HAS_TLAST": {
+                "value": "0",
+                "value_src": "constant"
+              }
+            },
+            "port_maps": {
+              "TDATA": {
+                "physical_name": "S_AXIS_TDATA",
+                "direction": "I",
+                "left": "7",
+                "right": "0"
+              },
+              "TVALID": {
+                "physical_name": "S_AXIS_TVALID",
+                "direction": "I"
+              },
+              "TREADY": {
+                "physical_name": "S_AXIS_TREADY",
+                "direction": "O"
+              }
+            }
+          }
+        },
+        "ports": {
+          "S_AXIS_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "S_AXIS",
+                "value_src": "constant"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "S_AXIS_ARESETN",
+                "value_src": "constant"
+              }
+            }
+          },
+          "S_AXIS_ARESETN": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "ch0": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "ch1": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "ch2": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "valid": {
+            "direction": "O"
+          }
+        }
+      },
+      "Color2graycore_0": {
+        "vlnv": "xilinx.com:module_ref:Color2graycore:1.0",
+        "xci_name": "design_1_Color2graycore_0_0",
+        "xci_path": "ip\\design_1_Color2graycore_0_0\\design_1_Color2graycore_0_0.xci",
+        "inst_hier_path": "Color2graycore_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Color2graycore",
           "boundary_crc": "0x0"
         },
         "interface_ports": {
@@ -154,18 +248,6 @@
               "HAS_TLAST": {
                 "value": "0",
                 "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
               }
             },
             "port_maps": {
@@ -216,18 +298,6 @@
               "ASSOCIATED_RESET": {
                 "value": "M_AXIS_ARESETN",
                 "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
               }
             }
           },
@@ -242,160 +312,25 @@
             }
           }
         }
-      },
-      "SIPO_0": {
-        "vlnv": "xilinx.com:module_ref:SIPO:1.0",
-        "xci_name": "design_1_SIPO_0_0",
-        "xci_path": "ip\\design_1_SIPO_0_0\\design_1_SIPO_0_0.xci",
-        "inst_hier_path": "SIPO_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "SIPO",
-          "boundary_crc": "0x0"
-        },
-        "interface_ports": {
-          "S_AXIS": {
-            "mode": "Slave",
-            "vlnv": "xilinx.com:interface:axis_rtl:1.0",
-            "parameters": {
-              "TDATA_NUM_BYTES": {
-                "value": "1",
-                "value_src": "auto"
-              },
-              "TDEST_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "TID_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "TUSER_WIDTH": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "HAS_TREADY": {
-                "value": "1",
-                "value_src": "constant"
-              },
-              "HAS_TSTRB": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "HAS_TKEEP": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "HAS_TLAST": {
-                "value": "0",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              }
-            },
-            "port_maps": {
-              "TDATA": {
-                "physical_name": "S_AXIS_TDATA",
-                "direction": "I",
-                "left": "7",
-                "right": "0"
-              },
-              "TVALID": {
-                "physical_name": "S_AXIS_TVALID",
-                "direction": "I"
-              },
-              "TREADY": {
-                "physical_name": "S_AXIS_TREADY",
-                "direction": "O"
-              }
-            }
-          }
-        },
-        "ports": {
-          "S_AXIS_ACLK": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_BUSIF": {
-                "value": "S_AXIS",
-                "value_src": "constant"
-              },
-              "ASSOCIATED_RESET": {
-                "value": "S_AXIS_ARESETN",
-                "value_src": "constant"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "ip_prop"
-              },
-              "PHASE": {
-                "value": "0.0",
-                "value_src": "ip_prop"
-              },
-              "CLK_DOMAIN": {
-                "value": "/clk_wiz_0_clk_out1",
-                "value_src": "ip_prop"
-              }
-            }
-          },
-          "S_AXIS_ARESETN": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "constant"
-              }
-            }
-          },
-          "ch0": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "ch1": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "ch2": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "valid": {
-            "direction": "O"
-          }
-        }
       }
     },
     "interface_nets": {
-      "AXI4Stream_UART_0_UART": {
+      "Color2graycore_0_M_AXIS": {
         "interface_ports": [
-          "usb_uart",
-          "AXI4Stream_UART_0/UART"
-        ]
-      },
-      "Color2gray_core_0_M_AXIS": {
-        "interface_ports": [
-          "AXI4Stream_UART_0/S00_AXIS_TX",
-          "Color2gray_core_0/M_AXIS"
+          "Color2graycore_0/M_AXIS",
+          "AXI4Stream_UART_0/S00_AXIS_TX"
         ]
       },
       "AXI4Stream_UART_0_M00_AXIS_RX": {
         "interface_ports": [
           "AXI4Stream_UART_0/M00_AXIS_RX",
           "SIPO_0/S_AXIS"
+        ]
+      },
+      "AXI4Stream_UART_0_UART": {
+        "interface_ports": [
+          "usb_uart",
+          "AXI4Stream_UART_0/UART"
         ]
       }
     },
@@ -407,8 +342,8 @@
           "proc_sys_reset_0/slowest_sync_clk",
           "AXI4Stream_UART_0/clk_uart",
           "AXI4Stream_UART_0/m00_axis_rx_aclk",
-          "Color2gray_core_0/M_AXIS_ACLK",
-          "SIPO_0/S_AXIS_ACLK"
+          "SIPO_0/S_AXIS_ACLK",
+          "Color2graycore_0/M_AXIS_ACLK"
         ]
       },
       "proc_sys_reset_0_peripheral_aresetn": {
@@ -416,8 +351,8 @@
           "proc_sys_reset_0/peripheral_aresetn",
           "AXI4Stream_UART_0/s00_axis_tx_aresetn",
           "AXI4Stream_UART_0/m00_axis_rx_aresetn",
-          "Color2gray_core_0/M_AXIS_ARESETN",
-          "SIPO_0/S_AXIS_ARESETN"
+          "SIPO_0/S_AXIS_ARESETN",
+          "Color2graycore_0/M_AXIS_ARESETN"
         ]
       },
       "clk_wiz_0_locked": {
@@ -448,25 +383,25 @@
       "SIPO_0_ch0": {
         "ports": [
           "SIPO_0/ch0",
-          "Color2gray_core_0/ch0"
+          "Color2graycore_0/ch0"
         ]
       },
       "SIPO_0_ch1": {
         "ports": [
           "SIPO_0/ch1",
-          "Color2gray_core_0/ch1"
+          "Color2graycore_0/ch1"
         ]
       },
       "SIPO_0_ch2": {
         "ports": [
           "SIPO_0/ch2",
-          "Color2gray_core_0/ch2"
+          "Color2graycore_0/ch2"
         ]
       },
       "SIPO_0_valid": {
         "ports": [
           "SIPO_0/valid",
-          "Color2gray_core_0/valid"
+          "Color2graycore_0/valid"
         ]
       }
     }
