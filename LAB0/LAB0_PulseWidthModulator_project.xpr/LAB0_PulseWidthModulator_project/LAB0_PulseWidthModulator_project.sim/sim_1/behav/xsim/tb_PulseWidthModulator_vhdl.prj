@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../PulseWidthModulator.srcs/sources_1/new/PulseWidthModulator.vhd" \
-"../../../../PulseWidthModulator.srcs/sim_1/new/tb_PulseWidthModulator.vhd" \
-
-# Do not sort compile order
-nosort
