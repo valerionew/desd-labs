@@ -48,7 +48,7 @@ signal  valid :  STD_LOGIC := '0';
 signal  M_AXIS_ACLK		:  	STD_LOGIC := '0';
 signal  M_AXIS_ARESETN	:  	STD_LOGIC := '0';
 signal  M_AXIS_TVALID	:   STD_LOGIC := '1';
-signal  M_AXIS_TDATA	:   STD_LOGIC_VECTOR(C_M_AXIS_TDATA_WIDTH-1 DOWNTO 0);
+signal  M_AXIS_TDATA	:   STD_LOGIC_VECTOR(C_M_AXIS_TDATA_WIDTH-1 DOWNTO 0) := (Others => '0');
 signal  M_AXIS_TREADY	:  	STD_LOGIC := '1';
 
 component Color2graycore is
@@ -99,7 +99,7 @@ dut : Color2graycore
 
 
    M_AXIS_ACLK <= not M_AXIS_ACLK after 5 ns;
-
+ 
  
    
     channels : process

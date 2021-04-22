@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../Color2Grayscale.srcs/sources_1/new/Color2graycore.vhd" \
-"../../../../Color2Grayscale.srcs/sim_1/new/color2gray_core_tb.vhd" \
-
-# Do not sort compile order
-nosort

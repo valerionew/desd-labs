@@ -1,0 +1,102 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Thu Apr 22 15:58:32 2021
+| Host         : DESKTOP-65ETA1A running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
+| Design       : design_1_wrapper
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    24 |
+|    Minimum number of control sets                        |    24 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    54 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    24 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     6 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |     2 |
+| >= 16              |     7 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             191 |           42 |
+| No           | No                    | Yes                    |               5 |            2 |
+| No           | Yes                   | No                     |              99 |           39 |
+| Yes          | No                    | No                     |              12 |            3 |
+| Yes          | No                    | Yes                    |              16 |            2 |
+| Yes          | Yes                   | No                     |             207 |           54 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|             Clock Signal            |                                               Enable Signal                                              |                                                                   Set/Reset Signal                                                                   | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  design_1_i/clk_wiz_0/inst/clk_out1 |                                                                                                          | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_RX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/FSM_onehot_gen_rst_ic.curr_wrst_state[4]_i_1_n_0 |                2 |              4 |         2.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 |                                                                                                          | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_TX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/FSM_onehot_gen_rst_ic.curr_wrst_state[4]_i_1_n_0 |                2 |              4 |         2.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 |                                                                                                          | design_1_i/proc_sys_reset_0/U0/EXT_LPF/lpf_int                                                                                                       |                1 |              4 |         4.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/AXI4Stream_UART_0/U0/UART_Manager_inst/Inst_uart/rx_baud_tick__0                              |                                                                                                                                                      |                1 |              4 |         4.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/proc_sys_reset_0/U0/SEQ/seq_cnt_en                                                            | design_1_i/proc_sys_reset_0/U0/SEQ/SEQ_COUNTER/clear                                                                                                 |                1 |              6 |         6.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/AXI4Stream_UART_0/U0/UART_Manager_inst/Inst_uart/E[0]                                         | design_1_i/proc_sys_reset_0/U0/peripheral_reset[0]                                                                                                   |                1 |              8 |         8.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/AXI4Stream_UART_0/U0/UART_Manager_inst/data_stream_in[7]_i_1_n_0                              | design_1_i/proc_sys_reset_0/U0/peripheral_reset[0]                                                                                                   |                1 |              8 |         8.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/SIPO_0/U0/pixel[1]_1                                                                          | design_1_i/SIPO_0/U0/p_0_in                                                                                                                          |                3 |              8 |         2.67 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/SIPO_0/U0/pixel[2]_0                                                                          | design_1_i/SIPO_0/U0/p_0_in                                                                                                                          |                3 |              8 |         2.67 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/SIPO_0/U0/pixel[0]_2                                                                          | design_1_i/SIPO_0/U0/p_0_in                                                                                                                          |                2 |              8 |         4.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/Color2graycore_0/U0//i__n_0                                                                   |                                                                                                                                                      |                2 |              8 |         4.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/AXI4Stream_UART_0/U0/UART_Manager_inst/Inst_uart/uart_tx_count[2]_i_1_n_0                     | design_1_i/proc_sys_reset_0/U0/peripheral_reset[0]                                                                                                   |                2 |             10 |         5.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/AXI4Stream_UART_0/U0/UART_Manager_inst/Inst_uart/uart_rx_data_vec                             | design_1_i/proc_sys_reset_0/U0/peripheral_reset[0]                                                                                                   |                2 |             11 |         5.50 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 |                                                                                                          | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_RX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/wrst_busy                                        |                5 |             12 |         2.40 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 |                                                                                                          | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_TX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/wrst_busy                                        |                3 |             12 |         4.00 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 |                                                                                                          | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_RX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_rd_rst_ic_reg_0                  |                7 |             15 |         2.14 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 |                                                                                                          | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_TX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_rd_rst_ic_reg_0                  |                7 |             15 |         2.14 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_TX/gnuram_async_fifo.xpm_fifo_base_inst/rdp_inst/E[0]          | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_TX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_rd_rst_ic_reg_0                  |                6 |             23 |         3.83 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_RX/gnuram_async_fifo.xpm_fifo_base_inst/rdp_inst/E[0]          | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_RX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/gen_rst_ic.fifo_rd_rst_ic_reg_0                  |                6 |             23 |         3.83 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/SIPO_0/U0/index[31]_i_2_n_0                                                                   | design_1_i/SIPO_0/U0/index[31]_i_1_n_0                                                                                                               |                8 |             31 |         3.88 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_RX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/E[0] | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_RX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/wrst_busy                                        |                9 |             34 |         3.78 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 |                                                                                                          | design_1_i/proc_sys_reset_0/U0/peripheral_reset[0]                                                                                                   |               14 |             38 |         2.71 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_TX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/E[0] | design_1_i/AXI4Stream_UART_0/U0/FIFO_DATA_TX/gnuram_async_fifo.xpm_fifo_base_inst/xpm_fifo_rst_inst/wrst_busy                                        |               12 |             45 |         3.75 |
+|  design_1_i/clk_wiz_0/inst/clk_out1 |                                                                                                          |                                                                                                                                                      |               43 |            192 |         4.47 |
++-------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+
+

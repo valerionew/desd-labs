@@ -150,9 +150,9 @@ c2g_dut : Color2graycore
         M_AXIS_TREADY	=> M_AXIS_TREADY	
       );
 
-
-  S_AXIS_ACLK <= not S_AXIS_ACLK after 5 ns;
-
+M_AXIS_ACLK <= not M_AXIS_ACLK after 5 ns;
+S_AXIS_ACLK <= M_AXIS_ACLK;
+M_AXIS_ARESETN <= S_AXIS_ARESETN;
 
 sim1: process
 begin
@@ -162,13 +162,71 @@ begin
     S_AXIS_TDATA <= std_logic_vector(to_unsigned(0,8));
     S_AXIS_TVALID <= '1';
     wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(1,8));
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(2,8));
+    wait for 10 ns;
+    S_AXIS_TVALID <= '0';
+    -- S_AXIS_TDATA <= std_logic_vector(to_unsigned(24,8));
+    wait for 30 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(0,8));
+    S_AXIS_TVALID <= '1';
+    wait for 10 ns;
     S_AXIS_TDATA <= std_logic_vector(to_unsigned(10,8));
     wait for 10 ns;
     S_AXIS_TDATA <= std_logic_vector(to_unsigned(20,8));
     wait for 10 ns;
-    S_AXIS_TDATA <= std_logic_vector(to_unsigned(24,8));
+    S_AXIS_TVALID <= '0';
+    -- S_AXIS_TDATA <= std_logic_vector(to_unsigned(24,8));
+    wait for 10 ns;
+    
+    wait for 30 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(65,8));
+    S_AXIS_TVALID <= '1';
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(66,8));
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(67,8));
     wait for 10 ns;
     S_AXIS_TVALID <= '0';
+    -- S_AXIS_TDATA <= std_logic_vector(to_unsigned(24,8));
+    wait for 10 ns;
+    
+    wait for 30 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(99,8));
+    S_AXIS_TVALID <= '1';
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(99,8));
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(99,8));
+    wait for 10 ns;
+    S_AXIS_TVALID <= '0';
+    -- S_AXIS_TDATA <= std_logic_vector(to_unsigned(24,8));
+    wait for 10 ns;
+    
+    wait for 30 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(123,8));
+    S_AXIS_TVALID <= '1';
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(124,8));
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(124,8));
+    wait for 10 ns;
+    S_AXIS_TVALID <= '0';
+    -- S_AXIS_TDATA <= std_logic_vector(to_unsigned(24,8));
+    wait for 10 ns;
+    
+    wait for 30 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(0,8));
+    S_AXIS_TVALID <= '1';
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(0,8));
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(0,8));
+    wait for 10 ns;
+    S_AXIS_TVALID <= '0';
+    -- S_AXIS_TDATA <= std_logic_vector(to_unsigned(24,8));
+    wait for 10 ns;
     
     wait;
 end process;

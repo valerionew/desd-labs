@@ -48,9 +48,9 @@ entity Color2graycore is
         -- AXI4Stream Reset
         M_AXIS_ARESETN	: IN 	STD_LOGIC;
         -- Master Stream Ports. TVALID indicates that the master is driving a valid transfer, A transfer takes place when both TVALID and TREADY are asserted. 
-        M_AXIS_TVALID	: OUT 	STD_LOGIC;
+        M_AXIS_TVALID	: OUT 	STD_LOGIC := '0';
         -- TDATA is the primary payload that is used to provide the data that is passing across the interface from the master.
-        M_AXIS_TDATA	: OUT 	STD_LOGIC_VECTOR(C_M_AXIS_TDATA_WIDTH-1 DOWNTO 0);
+        M_AXIS_TDATA	: OUT 	STD_LOGIC_VECTOR(C_M_AXIS_TDATA_WIDTH-1 DOWNTO 0) := (Others => '0');
         -- TREADY indicates that the slave can accept a transfer in the current cycle.
         M_AXIS_TREADY	: IN 	STD_LOGIC
         --------------------------------------------
@@ -61,29 +61,34 @@ end Color2graycore;
 architecture Behavioral of Color2graycore is
 
 signal M_AXIS_TVALID_sig : std_logic := '0';
+--signal sum_sig : integer range 0 to 1023  := 0; -- debug
 
 
 begin
 
 
 switch_write : process (M_AXIS_ACLK,M_AXIS_ARESETN)
-variable sum : integer := 0;
+variable sum : integer range 0 to 1023 := 0;
+
 begin
 if rising_edge(M_AXIS_ACLK) then
     if M_AXIS_ARESETN = '0' then
       M_AXIS_TVALID_sig <= '0';
-    else    
+    else  
+    
       if valid = '1' and M_AXIS_TVALID_sig = '0' then
         if M_AXIS_TREADY = '1' then
-            sum :=  to_integer((unsigned(ch0)) + (unsigned(ch1)) + (unsigned(ch2)));
+            sum :=  to_integer(('0'&'0'&unsigned(ch0)) + ('0'&'0'&unsigned(ch1)) + ('0'&'0'&unsigned(ch2))); --fu**it: it's just unsigned!
+            -- sum_sig <= sum; -- debug 
             
             -- discover: https://www.embeddedrelated.com/showthread/comp.arch.embedded/26432-1.php
             -- proof: https://www.youmath.it/forum/analisi-1/60110-somma-di-una-serie-a-segni-alterni.html            
-            M_AXIS_TDATA <= std_logic_vector(to_unsigned(sum/2 - sum/4 + sum/8 - sum/16,C_M_AXIS_TDATA_WIDTH));
+            -- M_AXIS_TDATA <= std_logic_vector(to_unsigned(sum/2 - sum/4 + sum/8 - sum/16,C_M_AXIS_TDATA_WIDTH));
+             M_AXIS_TDATA <= std_logic_vector(to_unsigned(sum/2 - sum/4 + sum/8 - sum/16 + sum/32 - sum/64 + sum/128 - sum/256 + sum/512,C_M_AXIS_TDATA_WIDTH));
+            M_AXIS_TVALID_sig <= '1';
         end if;
-        M_AXIS_TVALID_sig <= '1';
       elsif valid = '0' then
-        M_AXIS_TVALID_sig <= '0';
+          M_AXIS_TVALID_sig <= '0';
       end if;
     end if;
     

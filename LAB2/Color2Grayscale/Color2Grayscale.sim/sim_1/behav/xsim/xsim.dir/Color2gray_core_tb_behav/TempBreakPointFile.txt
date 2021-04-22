@@ -1,3 +1,0 @@
-Breakpoint File Version 1.0
-84,true,"C:/Users/valer/Documents/desd-labs/LAB2/Color2Grayscale/Color2Grayscale.srcs/sources_1/new/Color2gray_core.vhd"
-80,true,"C:/Users/valer/Documents/desd-labs/LAB2/Color2Grayscale/Color2Grayscale.srcs/sources_1/new/Color2gray_core.vhd"

@@ -81,7 +81,11 @@ if rising_edge(S_AXIS_ACLK) then
   else 
   
     S_AXIS_TREADY_sig <= '1';
-        
+    
+    if valid_sig = '1' then
+        valid_sig <= '0'; -- we exploit signal commit to just get one single valid clock
+    end if;
+    
     if S_AXIS_TVALID = '1' and S_AXIS_TREADY_sig = '1' then
         pixel(index) <= S_AXIS_TDATA;
         if index = 2 then
@@ -91,9 +95,8 @@ if rising_edge(S_AXIS_ACLK) then
           valid_sig <= '0';
           index <= index + 1 ;
         end if;
-        
     end if;
-  
+     
   end if;
 
 end if;
