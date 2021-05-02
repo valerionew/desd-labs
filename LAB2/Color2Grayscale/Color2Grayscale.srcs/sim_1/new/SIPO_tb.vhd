@@ -1,35 +1,10 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 21.04.2021 10:48:38
--- Design Name: 
--- Module Name: SIPO_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
+-- This simulation feeds 4 input bytes (1 whole pixel + 1 subpixel).
+-- We can see that valid goes high only when 3 bytes are received.
+-- Then the whole array is reset and the process starts again
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity SIPO_tb is
 Generic (
@@ -98,13 +73,13 @@ port map(
 
   S_AXIS_ACLK <= not S_AXIS_ACLK after 5 ns;
 
-
+-- data, reset, valid drive
 sim1: process
 begin
     S_AXIS_ARESETN <= '1';
     S_AXIS_TVALID <= '0';
     wait for 30 ns;
-    S_AXIS_TDATA <= std_logic_vector(to_unsigned(0,8));
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(1,8));
     S_AXIS_TVALID <= '1';
     wait for 10 ns;
     S_AXIS_TDATA <= std_logic_vector(to_unsigned(10,8));
@@ -114,6 +89,23 @@ begin
     S_AXIS_TDATA <= std_logic_vector(to_unsigned(24,8));
     wait for 10 ns;
     S_AXIS_TVALID <= '0';
+    S_AXIS_ARESETN <= '0';
+    wait for 10 ns;
+    S_AXIS_ARESETN <= '1';
+    S_AXIS_TVALID <= '0';
+    wait for 30 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(1,8));
+    S_AXIS_TVALID <= '1';
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(10,8));
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(20,8));
+    wait for 10 ns;
+    S_AXIS_TDATA <= std_logic_vector(to_unsigned(24,8));
+    wait for 10 ns;
+    S_AXIS_TVALID <= '0';
+    
+    
     
     wait;
 end process;

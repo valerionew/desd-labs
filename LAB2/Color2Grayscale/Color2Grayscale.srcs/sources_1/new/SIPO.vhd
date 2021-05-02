@@ -1,35 +1,8 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 20.04.2021 18:09:38
--- Design Name: 
--- Module Name: SIPO - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
+-- SIPO receives 3 colors from USB UART and realizes a serial-to-parallel conversion that
+-- will be fed to the graycore
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity SIPO is
 Generic (
@@ -61,53 +34,60 @@ Generic (
 end SIPO;
 
 architecture Behavioral of SIPO is
+-- A pixel is an array of 3 subpixels that are C_S_AXIS_TDATA_WIDTH long
 type pixel_type is array (2 downto 0) of STD_LOGIC_VECTOR (C_S_AXIS_TDATA_WIDTH-1 downto 0);
-
+-- Pixel signal
 signal pixel : pixel_type := (Others => (Others => '0'));
 
-signal S_AXIS_TREADY_sig : std_logic := '0';
 signal valid_sig : std_logic := '0';
 signal index : integer := 0;
 
+begin
 
-begin
-sipo : process(S_AXIS_ACLK, S_AXIS_ARESETN)
-begin
-if rising_edge(S_AXIS_ACLK) then
-  if S_AXIS_ARESETN = '0' then
-      S_AXIS_TREADY_sig <= '0';
-      pixel <= (Others => (Others => '0'));
-      valid_sig <= '0';
-  else 
-  
-    S_AXIS_TREADY_sig <= '1';
-    
-    if valid_sig = '1' then
-        valid_sig <= '0'; -- we exploit signal commit to just get one single valid clock
-    end if;
-    
-    if S_AXIS_TVALID = '1' and S_AXIS_TREADY_sig = '1' then
-        pixel(index) <= S_AXIS_TDATA;
-        if index = 2 then
-          valid_sig <= '1';
-          index <= 0;
-        else
+SIPO : process(S_AXIS_ACLK, S_AXIS_ARESETN)
+
+    begin
+        if S_AXIS_ARESETN = '0' then
+          -- Can't be ready during reset
+          S_AXIS_TREADY <= '0';
+          -- Reset SIPO
+          pixel <= (Others => (Others => '0'));
           valid_sig <= '0';
-          index <= index + 1 ;
-        end if;
-    end if;
-     
-  end if;
-
-end if;
+          -- Reset array index
+          index <= 0;
+          
+        elsif rising_edge(S_AXIS_ACLK) then
+          
+            S_AXIS_TREADY <= '1';
+            
+            -- We exploit signal commit to just get one single valid clock
+            if valid_sig = '1' then
+                valid_sig <= '0'; 
+            end if;
+            
+            if S_AXIS_TVALID = '1' then
+                -- Feed the input subpixel byte to the current array position
+                pixel(index) <= S_AXIS_TDATA;
+                
+                -- Reset index and output pixel data
+                if index = 2 then
+                  -- Valid is up to start graycore conversion
+                  valid_sig <= '1';
+                  index <= 0;
+                else
+                  valid_sig <= '0';
+                  index <= index + 1 ;
+                end if;
+            end if;
+             
+          end if;
+    
 end process;
 
 valid <= valid_sig;
-S_AXIS_TREADY <= S_AXIS_TREADY_sig;
+-- Assign array to output data
 ch0<=pixel(0);
 ch1<=pixel(1);
 ch2<=pixel(2);
-
-
 
 end Behavioral;

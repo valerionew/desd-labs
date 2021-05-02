@@ -1,35 +1,6 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 20.04.2021 17:25:32
--- Design Name: 
--- Module Name: Color2graycore - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity Color2graycore is
 	Generic (
@@ -59,40 +30,47 @@ entity Color2graycore is
 end Color2graycore;
 
 architecture Behavioral of Color2graycore is
-
+-- Signal declaration
 signal M_AXIS_TVALID_sig : std_logic := '0';
 --signal sum_sig : integer range 0 to 1023  := 0; -- debug
 
-
 begin
 
-
 switch_write : process (M_AXIS_ACLK,M_AXIS_ARESETN)
+
+-- Variable declaration
 variable sum : integer range 0 to 1023 := 0;
 
 begin
-if rising_edge(M_AXIS_ACLK) then
     if M_AXIS_ARESETN = '0' then
-      M_AXIS_TVALID_sig <= '0';
-    else  
     
-      if valid = '1' and M_AXIS_TVALID_sig = '0' then
+          M_AXIS_TVALID_sig <= '0';
+          
+    elsif rising_edge(M_AXIS_ACLK) then  
+      -- When pixel data is available
+      if valid = '1' then
+      
+        -- When AXIS is ready to receive converted signal
         if M_AXIS_TREADY = '1' then
-            sum :=  to_integer(('0'&'0'&unsigned(ch0)) + ('0'&'0'&unsigned(ch1)) + ('0'&'0'&unsigned(ch2))); --fu**it: it's just unsigned!
+            -- Sum the channels. Padding is by 2 bits because 3 bytes are summed
+            sum :=  to_integer(('0'&'0'&unsigned(ch0)) + ('0'&'0'&unsigned(ch1)) + ('0'&'0'&unsigned(ch2)));
             -- sum_sig <= sum; -- debug 
             
-            -- discover: https://www.embeddedrelated.com/showthread/comp.arch.embedded/26432-1.php
-            -- proof: https://www.youmath.it/forum/analisi-1/60110-somma-di-una-serie-a-segni-alterni.html            
-            -- M_AXIS_TDATA <= std_logic_vector(to_unsigned(sum/2 - sum/4 + sum/8 - sum/16,C_M_AXIS_TDATA_WIDTH));
+            
+            -- Literature for smart division by 3 (we're not that smart :C )
+            -- Discover: https://www.embeddedrelated.com/showthread/comp.arch.embedded/26432-1.php
+            -- Proof: https://www.youmath.it/forum/analisi-1/60110-somma-di-una-serie-a-segni-alterni.html    
+            
+            -- This could be also done by writing literal shifts of the variable sum, but a more elegant solution using integer is adopted.
+            -- Vivado will see the integer division by a multiple of two. This way a complete ALU won't be implemented like what whould happen by writing sum/3
              M_AXIS_TDATA <= std_logic_vector(to_unsigned(sum/2 - sum/4 + sum/8 - sum/16 + sum/32 - sum/64 + sum/128 - sum/256 + sum/512,C_M_AXIS_TDATA_WIDTH));
             M_AXIS_TVALID_sig <= '1';
         end if;
+        
       elsif valid = '0' then
           M_AXIS_TVALID_sig <= '0';
       end if;
     end if;
-    
-end if;
 end process;
 
 M_AXIS_TVALID <= M_AXIS_TVALID_sig;
