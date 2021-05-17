@@ -1,7 +1,7 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Thu Apr 22 15:56:07 2021
+--Date        : Sun May  2 17:42:58 2021
 --Host        : DESKTOP-65ETA1A running 64-bit major release  (build 9200)
 --Command     : generate_target design_1.bd
 --Design      : design_1
@@ -67,15 +67,15 @@ architecture STRUCTURE of design_1 is
   end component design_1_AXI4Stream_UART_0_0;
   component design_1_SIPO_0_1 is
   port (
-    S_AXIS_ACLK : in STD_LOGIC_VECTOR ( 0 to 0 );
-    S_AXIS_ARESETN : in STD_LOGIC_VECTOR ( 0 to 0 );
-    S_AXIS_TREADY : out STD_LOGIC_VECTOR ( 0 to 0 );
+    S_AXIS_ACLK : in STD_LOGIC;
+    S_AXIS_ARESETN : in STD_LOGIC;
+    S_AXIS_TREADY : out STD_LOGIC;
     S_AXIS_TDATA : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    S_AXIS_TVALID : in STD_LOGIC_VECTOR ( 0 to 0 );
+    S_AXIS_TVALID : in STD_LOGIC;
     ch0 : out STD_LOGIC_VECTOR ( 7 downto 0 );
     ch1 : out STD_LOGIC_VECTOR ( 7 downto 0 );
     ch2 : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    valid : out STD_LOGIC_VECTOR ( 0 to 0 )
+    valid : out STD_LOGIC
   );
   end component design_1_SIPO_0_1;
   component design_1_Color2graycore_0_0 is
@@ -92,7 +92,7 @@ architecture STRUCTURE of design_1 is
   );
   end component design_1_Color2graycore_0_0;
   signal AXI4Stream_UART_0_M00_AXIS_RX_TDATA : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal AXI4Stream_UART_0_M00_AXIS_RX_TREADY : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal AXI4Stream_UART_0_M00_AXIS_RX_TREADY : STD_LOGIC;
   signal AXI4Stream_UART_0_M00_AXIS_RX_TVALID : STD_LOGIC;
   signal AXI4Stream_UART_0_UART_RxD : STD_LOGIC;
   signal AXI4Stream_UART_0_UART_TxD : STD_LOGIC;
@@ -102,7 +102,7 @@ architecture STRUCTURE of design_1 is
   signal SIPO_0_ch0 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal SIPO_0_ch1 : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal SIPO_0_ch2 : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal SIPO_0_valid : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal SIPO_0_valid : STD_LOGIC;
   signal clk_wiz_0_clk_out1 : STD_LOGIC;
   signal clk_wiz_0_locked : STD_LOGIC;
   signal proc_sys_reset_0_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -133,7 +133,7 @@ AXI4Stream_UART_0: component design_1_AXI4Stream_UART_0_0
       m00_axis_rx_aclk => clk_wiz_0_clk_out1,
       m00_axis_rx_aresetn => proc_sys_reset_0_peripheral_aresetn(0),
       m00_axis_rx_tdata(7 downto 0) => AXI4Stream_UART_0_M00_AXIS_RX_TDATA(7 downto 0),
-      m00_axis_rx_tready => AXI4Stream_UART_0_M00_AXIS_RX_TREADY(0),
+      m00_axis_rx_tready => AXI4Stream_UART_0_M00_AXIS_RX_TREADY,
       m00_axis_rx_tvalid => AXI4Stream_UART_0_M00_AXIS_RX_TVALID,
       rst => proc_sys_reset_0_peripheral_reset(0),
       s00_axis_tx_aclk => clk_wiz_0_clk_out1,
@@ -152,19 +152,19 @@ Color2graycore_0: component design_1_Color2graycore_0_0
       ch0(7 downto 0) => SIPO_0_ch0(7 downto 0),
       ch1(7 downto 0) => SIPO_0_ch1(7 downto 0),
       ch2(7 downto 0) => SIPO_0_ch2(7 downto 0),
-      valid => SIPO_0_valid(0)
+      valid => SIPO_0_valid
     );
 SIPO_0: component design_1_SIPO_0_1
      port map (
-      S_AXIS_ACLK(0) => clk_wiz_0_clk_out1,
-      S_AXIS_ARESETN(0) => proc_sys_reset_0_peripheral_aresetn(0),
+      S_AXIS_ACLK => clk_wiz_0_clk_out1,
+      S_AXIS_ARESETN => proc_sys_reset_0_peripheral_aresetn(0),
       S_AXIS_TDATA(7 downto 0) => AXI4Stream_UART_0_M00_AXIS_RX_TDATA(7 downto 0),
-      S_AXIS_TREADY(0) => AXI4Stream_UART_0_M00_AXIS_RX_TREADY(0),
-      S_AXIS_TVALID(0) => AXI4Stream_UART_0_M00_AXIS_RX_TVALID,
+      S_AXIS_TREADY => AXI4Stream_UART_0_M00_AXIS_RX_TREADY,
+      S_AXIS_TVALID => AXI4Stream_UART_0_M00_AXIS_RX_TVALID,
       ch0(7 downto 0) => SIPO_0_ch0(7 downto 0),
       ch1(7 downto 0) => SIPO_0_ch1(7 downto 0),
       ch2(7 downto 0) => SIPO_0_ch2(7 downto 0),
-      valid(0) => SIPO_0_valid(0)
+      valid => SIPO_0_valid
     );
 clk_wiz_0: component design_1_clk_wiz_0_0
      port map (

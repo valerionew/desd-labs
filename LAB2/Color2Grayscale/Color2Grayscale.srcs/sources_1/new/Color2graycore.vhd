@@ -64,6 +64,7 @@ begin
             -- This could be also done by writing literal shifts of the variable sum, but a more elegant solution using integer is adopted.
             -- Vivado will see the integer division by a multiple of two. This way a complete ALU won't be implemented like what whould happen by writing sum/3
              M_AXIS_TDATA <= std_logic_vector(to_unsigned(sum/2 - sum/4 + sum/8 - sum/16 + sum/32 - sum/64 + sum/128 - sum/256 + sum/512,C_M_AXIS_TDATA_WIDTH));
+            -- M_AXIS_TDATA <= std_logic_vector(to_unsigned(sum/3,C_M_AXIS_TDATA_WIDTH)); -- this acutally uses half LUTs and same number of FFs
             M_AXIS_TVALID_sig <= '1';
         end if;
         

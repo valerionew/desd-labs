@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Thu Apr 22 15:45:17 2021
+// Date        : Sun May  2 17:44:10 2021
 // Host        : DESKTOP-65ETA1A running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 //               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_Color2graycore_0_0_sim_netlist.v
@@ -13,31 +13,30 @@
 `timescale 1 ps / 1 ps
 
 module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Color2graycore
-   (M_AXIS_TVALID,
-    M_AXIS_TDATA,
+   (M_AXIS_TDATA,
+    M_AXIS_TVALID,
     M_AXIS_ARESETN,
-    valid,
     M_AXIS_TREADY,
+    valid,
     M_AXIS_ACLK,
     ch1,
     ch0,
     ch2);
-  output M_AXIS_TVALID;
   output [7:0]M_AXIS_TDATA;
+  output M_AXIS_TVALID;
   input M_AXIS_ARESETN;
-  input valid;
   input M_AXIS_TREADY;
+  input valid;
   input M_AXIS_ACLK;
   input [7:0]ch1;
   input [7:0]ch0;
   input [7:0]ch2;
 
-  wire \/i__n_0 ;
   wire M_AXIS_ACLK;
   wire M_AXIS_ARESETN;
   wire [7:0]M_AXIS_TDATA;
-  wire [7:0]M_AXIS_TDATA0;
   wire M_AXIS_TDATA00;
+  wire [7:0]M_AXIS_TDATA00_in;
   wire M_AXIS_TDATA0__0_carry__0_i_1_n_0;
   wire M_AXIS_TDATA0__0_carry__0_i_2_n_0;
   wire M_AXIS_TDATA0__0_carry__0_i_3_n_0;
@@ -128,9 +127,11 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Color2graycore
   wire M_AXIS_TDATA9__0_carry_n_1;
   wire M_AXIS_TDATA9__0_carry_n_2;
   wire M_AXIS_TDATA9__0_carry_n_3;
+  wire \M_AXIS_TDATA[7]_i_1_n_0 ;
   wire M_AXIS_TREADY;
   wire M_AXIS_TVALID;
   wire M_AXIS_TVALID_sig_i_1_n_0;
+  wire M_AXIS_TVALID_sig_i_2_n_0;
   wire [7:0]ch0;
   wire [7:0]ch1;
   wire [7:0]ch2;
@@ -141,14 +142,6 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Color2graycore
   wire [3:0]NLW_M_AXIS_TDATA9__0_carry__1_CO_UNCONNECTED;
   wire [3:1]NLW_M_AXIS_TDATA9__0_carry__1_O_UNCONNECTED;
 
-  LUT4 #(
-    .INIT(16'h0080)) 
-    \/i_ 
-       (.I0(M_AXIS_ARESETN),
-        .I1(M_AXIS_TREADY),
-        .I2(valid),
-        .I3(M_AXIS_TVALID),
-        .O(\/i__n_0 ));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 M_AXIS_TDATA0__0_carry
        (.CI(1'b0),
@@ -276,7 +269,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Color2graycore
         .CO({M_AXIS_TDATA0__23_carry_n_0,M_AXIS_TDATA0__23_carry_n_1,M_AXIS_TDATA0__23_carry_n_2,M_AXIS_TDATA0__23_carry_n_3}),
         .CYINIT(1'b0),
         .DI({M_AXIS_TDATA0__23_carry_i_1_n_0,M_AXIS_TDATA0__23_carry_i_2_n_0,M_AXIS_TDATA0__23_carry_i_3_n_0,1'b0}),
-        .O(M_AXIS_TDATA0[3:0]),
+        .O(M_AXIS_TDATA00_in[3:0]),
         .S({M_AXIS_TDATA0__23_carry_i_4_n_0,M_AXIS_TDATA0__23_carry_i_5_n_0,M_AXIS_TDATA0__23_carry_i_6_n_0,M_AXIS_TDATA0__23_carry_i_7_n_0}));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 M_AXIS_TDATA0__23_carry__0
@@ -284,7 +277,7 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Color2graycore
         .CO({NLW_M_AXIS_TDATA0__23_carry__0_CO_UNCONNECTED[3],M_AXIS_TDATA0__23_carry__0_n_1,M_AXIS_TDATA0__23_carry__0_n_2,M_AXIS_TDATA0__23_carry__0_n_3}),
         .CYINIT(1'b0),
         .DI({1'b0,M_AXIS_TDATA0__23_carry__0_i_1_n_0,M_AXIS_TDATA0__23_carry__0_i_2_n_0,M_AXIS_TDATA0__23_carry__0_i_3_n_0}),
-        .O(M_AXIS_TDATA0[7:4]),
+        .O(M_AXIS_TDATA00_in[7:4]),
         .S({M_AXIS_TDATA0__23_carry__0_i_4_n_0,M_AXIS_TDATA0__23_carry__0_i_5_n_0,M_AXIS_TDATA0__23_carry__0_i_6_n_0,M_AXIS_TDATA0__23_carry__0_i_7_n_0}));
   (* HLUTNM = "lutpair8" *) 
   LUT4 #(
@@ -716,86 +709,97 @@ module decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Color2graycore
         .I1(ch1[0]),
         .I2(ch2[0]),
         .O(M_AXIS_TDATA9__0_carry_i_7_n_0));
+  LUT3 #(
+    .INIT(8'h80)) 
+    \M_AXIS_TDATA[7]_i_1 
+       (.I0(M_AXIS_ARESETN),
+        .I1(M_AXIS_TREADY),
+        .I2(valid),
+        .O(\M_AXIS_TDATA[7]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \M_AXIS_TDATA_reg[0] 
        (.C(M_AXIS_ACLK),
-        .CE(\/i__n_0 ),
-        .D(M_AXIS_TDATA0[0]),
+        .CE(\M_AXIS_TDATA[7]_i_1_n_0 ),
+        .D(M_AXIS_TDATA00_in[0]),
         .Q(M_AXIS_TDATA[0]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \M_AXIS_TDATA_reg[1] 
        (.C(M_AXIS_ACLK),
-        .CE(\/i__n_0 ),
-        .D(M_AXIS_TDATA0[1]),
+        .CE(\M_AXIS_TDATA[7]_i_1_n_0 ),
+        .D(M_AXIS_TDATA00_in[1]),
         .Q(M_AXIS_TDATA[1]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \M_AXIS_TDATA_reg[2] 
        (.C(M_AXIS_ACLK),
-        .CE(\/i__n_0 ),
-        .D(M_AXIS_TDATA0[2]),
+        .CE(\M_AXIS_TDATA[7]_i_1_n_0 ),
+        .D(M_AXIS_TDATA00_in[2]),
         .Q(M_AXIS_TDATA[2]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \M_AXIS_TDATA_reg[3] 
        (.C(M_AXIS_ACLK),
-        .CE(\/i__n_0 ),
-        .D(M_AXIS_TDATA0[3]),
+        .CE(\M_AXIS_TDATA[7]_i_1_n_0 ),
+        .D(M_AXIS_TDATA00_in[3]),
         .Q(M_AXIS_TDATA[3]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \M_AXIS_TDATA_reg[4] 
        (.C(M_AXIS_ACLK),
-        .CE(\/i__n_0 ),
-        .D(M_AXIS_TDATA0[4]),
+        .CE(\M_AXIS_TDATA[7]_i_1_n_0 ),
+        .D(M_AXIS_TDATA00_in[4]),
         .Q(M_AXIS_TDATA[4]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \M_AXIS_TDATA_reg[5] 
        (.C(M_AXIS_ACLK),
-        .CE(\/i__n_0 ),
-        .D(M_AXIS_TDATA0[5]),
+        .CE(\M_AXIS_TDATA[7]_i_1_n_0 ),
+        .D(M_AXIS_TDATA00_in[5]),
         .Q(M_AXIS_TDATA[5]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \M_AXIS_TDATA_reg[6] 
        (.C(M_AXIS_ACLK),
-        .CE(\/i__n_0 ),
-        .D(M_AXIS_TDATA0[6]),
+        .CE(\M_AXIS_TDATA[7]_i_1_n_0 ),
+        .D(M_AXIS_TDATA00_in[6]),
         .Q(M_AXIS_TDATA[6]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 
     \M_AXIS_TDATA_reg[7] 
        (.C(M_AXIS_ACLK),
-        .CE(\/i__n_0 ),
-        .D(M_AXIS_TDATA0[7]),
+        .CE(\M_AXIS_TDATA[7]_i_1_n_0 ),
+        .D(M_AXIS_TDATA00_in[7]),
         .Q(M_AXIS_TDATA[7]),
         .R(1'b0));
-  LUT4 #(
-    .INIT(16'hA080)) 
+  LUT3 #(
+    .INIT(8'hC8)) 
     M_AXIS_TVALID_sig_i_1
-       (.I0(M_AXIS_ARESETN),
-        .I1(M_AXIS_TVALID),
-        .I2(valid),
-        .I3(M_AXIS_TREADY),
+       (.I0(M_AXIS_TREADY),
+        .I1(valid),
+        .I2(M_AXIS_TVALID),
         .O(M_AXIS_TVALID_sig_i_1_n_0));
-  FDRE #(
+  LUT1 #(
+    .INIT(2'h1)) 
+    M_AXIS_TVALID_sig_i_2
+       (.I0(M_AXIS_ARESETN),
+        .O(M_AXIS_TVALID_sig_i_2_n_0));
+  FDCE #(
     .INIT(1'b0)) 
     M_AXIS_TVALID_sig_reg
        (.C(M_AXIS_ACLK),
         .CE(1'b1),
+        .CLR(M_AXIS_TVALID_sig_i_2_n_0),
         .D(M_AXIS_TVALID_sig_i_1_n_0),
-        .Q(M_AXIS_TVALID),
-        .R(1'b0));
+        .Q(M_AXIS_TVALID));
 endmodule
 
 (* CHECK_LICENSE_TYPE = "design_1_Color2graycore_0_0,Color2graycore,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_definition_source = "module_ref" *) 

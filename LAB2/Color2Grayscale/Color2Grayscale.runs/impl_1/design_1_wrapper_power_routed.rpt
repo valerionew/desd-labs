@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Thu Apr 22 15:59:01 2021
+| Date             : Sun May  2 17:46:55 2021
 | Host             : DESKTOP-65ETA1A running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.184        |
+| Total On-Chip Power (W)  | 0.185        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.112        |
+| Dynamic (W)              | 0.113        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.1         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.003 |        5 |       --- |             --- |
-| Slice Logic             |     0.001 |     1025 |       --- |             --- |
-|   LUT as Logic          |     0.001 |      289 |     20800 |            1.39 |
+| Slice Logic             |     0.002 |     1054 |       --- |             --- |
+|   LUT as Logic          |     0.001 |      326 |     20800 |            1.57 |
 |   Register              |    <0.001 |      530 |     41600 |            1.27 |
 |   CARRY4                |    <0.001 |       57 |      8150 |            0.70 |
 |   Others                |     0.000 |       73 |       --- |             --- |
 |   LUT as Shift Register |     0.000 |        1 |      9600 |            0.01 |
-| Signals                 |     0.001 |      710 |       --- |             --- |
+| Signals                 |     0.002 |      736 |       --- |             --- |
 | Block RAM               |    <0.001 |        1 |        50 |            2.00 |
 | MMCM                    |     0.106 |        1 |         5 |           20.00 |
 | I/O                     |    <0.001 |        4 |       106 |            3.77 |
 | Static Power            |     0.072 |          |           |                 |
-| Total                   |     0.184 |          |           |                 |
+| Total                   |     0.185 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -145,10 +145,10 @@ Table of Contents
 +-----------------------+-----------+
 | Name                  | Power (W) |
 +-----------------------+-----------+
-| design_1_wrapper      |     0.112 |
-|   design_1_i          |     0.112 |
-|     AXI4Stream_UART_0 |     0.005 |
-|       U0              |     0.005 |
+| design_1_wrapper      |     0.113 |
+|   design_1_i          |     0.113 |
+|     AXI4Stream_UART_0 |     0.006 |
+|       U0              |     0.006 |
 |     clk_wiz_0         |     0.106 |
 |       inst            |     0.106 |
 +-----------------------+-----------+

@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Thu Apr 22 11:43:44 2021
+// Date        : Sun May  2 17:02:04 2021
 // Host        : DESKTOP-65ETA1A running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               c:/Users/valer/Documents/desd-labs/LAB2/Color2Grayscale/Color2Grayscale.gen/sources_1/bd/design_1/ip/design_1_SIPO_0_1/design_1_SIPO_0_1_stub.v
@@ -16,14 +16,14 @@
 (* x_core_info = "SIPO,Vivado 2020.2" *)
 module design_1_SIPO_0_1(S_AXIS_ACLK, S_AXIS_ARESETN, S_AXIS_TREADY, 
   S_AXIS_TDATA, S_AXIS_TVALID, ch0, ch1, ch2, valid)
-/* synthesis syn_black_box black_box_pad_pin="S_AXIS_ACLK[0:0],S_AXIS_ARESETN[0:0],S_AXIS_TREADY[0:0],S_AXIS_TDATA[7:0],S_AXIS_TVALID[0:0],ch0[7:0],ch1[7:0],ch2[7:0],valid[0:0]" */;
-  input [0:0]S_AXIS_ACLK;
-  input [0:0]S_AXIS_ARESETN;
-  output [0:0]S_AXIS_TREADY;
+/* synthesis syn_black_box black_box_pad_pin="S_AXIS_ACLK,S_AXIS_ARESETN,S_AXIS_TREADY,S_AXIS_TDATA[7:0],S_AXIS_TVALID,ch0[7:0],ch1[7:0],ch2[7:0],valid" */;
+  input S_AXIS_ACLK;
+  input S_AXIS_ARESETN;
+  output S_AXIS_TREADY;
   input [7:0]S_AXIS_TDATA;
-  input [0:0]S_AXIS_TVALID;
+  input S_AXIS_TVALID;
   output [7:0]ch0;
   output [7:0]ch1;
   output [7:0]ch2;
-  output [0:0]valid;
+  output valid;
 endmodule
