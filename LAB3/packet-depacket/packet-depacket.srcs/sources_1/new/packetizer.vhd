@@ -60,11 +60,12 @@ architecture Behavioral of packetizer is
     signal index            : integer := 0;
     signal writeout_index   : integer := 0;
     signal COMPLETE_PACKET  : STD_LOGIC := '0';
+    signal M_AXIS_TVALID_s  : STD_LOGIC := '0';
 
     
 begin
 
-
+    M_AXIS_TVALID <= M_AXIS_TVALID_s;
     data_receive: process (RESETN, CLK)
     begin
         if resetn = '0' then
@@ -92,10 +93,33 @@ begin
                 end if;
 
             elsif COMPLETE_PACKET = '1' and M_AXIS_TREADY = '1' then
-                -- it's writeout time!
+                M_AXIS_TVALID_s  <= '1';
+                -- writeoute!
 
+                if writeout_index = 0 then
+                -- it's header time!
+                    M_AXIS_TDATA <= HEADER;
+                elsif writeout_index = PACKET_LENGTH then
+                -- it's footer time!
+                    M_AXIS_TDATA <= FOOTER;
+                elsif writeout_index = PACKET_LENGTH+1 then
+                -- all has been written
+                    COMPLETE_PACKET <= '0';
+                    writeout_index  <=  0 ;
+                else                    
+                -- here we are shifting, but we cold as well just mux the data out without shifting.
+                    M_AXIS_TDATA   <= SR(PACKET_LENGTH - 1);
+                    SR (PACKET_LENGTH - 1 downto 1) <= SR(PACKET_LENGTH - 2 downto 0); 
+
+                -- we increase the writeout index to keep track of where we are at in the writeout
+                    writeout_index <= writeout_index + 1;
+                    
+                end if;
+
+            elsif  M_AXIS_TVALID_s = '1' and M_AXIS_TREADY = '1' then
+                M_AXIS_TVALID_s <= '0';
             end if;
-            
+
 
         end if;
     end process;
