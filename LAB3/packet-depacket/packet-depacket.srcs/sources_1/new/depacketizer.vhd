@@ -16,26 +16,17 @@ entity depacketizer is
         RESETN :  IN STD_LOGIC;   
     
         ------------AXI4-Stream--master-------------
-        -- AXI4Stream Clock
-        M_AXIS_ACLK		: IN 	STD_LOGIC;
-        -- AXI4Stream Reset
-        M_AXIS_ARESETN	: IN 	STD_LOGIC;
         -- Master Stream Ports. TVALID indicates that the master is driving a valid transfer, A transfer takes place when both TVALID and TREADY are asserted. 
         M_AXIS_TVALID	: OUT 	STD_LOGIC := '0';
         -- TDATA is the primary payload that is used to provide the data that is passing across the interface from the master.
         M_AXIS_TDATA	: OUT 	STD_LOGIC_VECTOR(C_M_AXIS_TDATA_WIDTH-1 DOWNTO 0) := (Others => '0');
         -- TREADY indicates that the slave can accept a transfer in the current cycle.
-        M_AXIS_TREADY	: IN 	STD_LOGIC;
+        M_AXIS_TREADY	: IN 	STD_LOGIC := '1';
         -- AXI4Stream tLAST to distinguish between left and right ciannol
         M_AXIS_TLAST	: OUT 	STD_LOGIC := '0';
         --------------------------------------------
 
          --------------AXI4-Stream--slave------------
-        -- AXI4Stream sink: Clock
-        S_AXIS_ACLK		: IN 	STD_LOGIC;
-        -- AXI4Stream sink: Reset
-        S_AXIS_ARESETN	: IN 	STD_LOGIC;
-        -- Ready to accept data in
         S_AXIS_TREADY	: OUT 	STD_LOGIC := '0';
         -- Data in
         S_AXIS_TDATA	: IN 	STD_LOGIC_VECTOR(C_S_AXIS_TDATA_WIDTH-1 DOWNTO 0);
@@ -45,6 +36,7 @@ entity depacketizer is
 
     );
 end depacketizer;
+
 
 architecture Behavioral of depacketizer is
     ------ Constant Declaration ------
@@ -60,11 +52,13 @@ architecture Behavioral of depacketizer is
     signal index            : integer := 0;
     signal writeout_index   : integer := 0;
     signal COMPLETE_PACKET  : STD_LOGIC := '0';
+    signal M_AXIS_TVALID_s  : STD_LOGIC := '0';
 
     
 begin
 
     S_AXIS_TREADY <= COMPLETE_PACKET;
+    M_AXIS_TVALID <= M_AXIS_TVALID_s;
     data_receive: process (RESETN, CLK)
     begin
         if resetn = '0' then
@@ -76,9 +70,9 @@ begin
             -- Reset ports
 
             M_AXIS_TLAST	<= '0';
-            S_AXIS_TREADY	<= '0';
+            COMPLETE_PACKET	<= '0';
             M_AXIS_TDATA	<= (Others => '0');
-            M_AXIS_TVALID	<= '0';
+            M_AXIS_TVALID_s	<= '0';
         
             -- Reset integer signal counters
             index <= 0;
@@ -108,7 +102,7 @@ begin
                     
                 elsif COMPLETE_PACKET = '1' and M_AXIS_TREADY = '1' then
         
-                    M_AXIS_TVALID  <= '1';
+                    M_AXIS_TVALID_s  <= '1';
                     M_AXIS_TDATA   <= SR(PACKET_LENGTH - 2) &  SR(PACKET_LENGTH - 1) ;
 
                     -- here we are shifting, but we cold as well just mux the data out withotu shifting.
@@ -129,11 +123,9 @@ begin
                         writeout_index  <=  0 ;
                     end if;
 
-                    --resetta complete packet dopo aver resettato tutto a zero
-
                 -- if handshake occurred, no new data is available, set valid to 0 as data has already been read.
-                elsif  M_AXIS_TVALID = '1' and M_AXIS_TREADY = '1' then
-                    M_AXIS_TVALID <= '0';
+                elsif  M_AXIS_TVALID_s = '1' and M_AXIS_TREADY = '1' then
+                    M_AXIS_TVALID_s <= '0';
                 end if;
 
 

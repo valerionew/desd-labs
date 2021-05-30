@@ -1,0 +1,42 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.871877",
+   "Default View_TopLeft":"-71,-813",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
+#  -string -flagsOSRD
+preplace port usb_uart -pg 1 -lvl 7 -x 2050 -y -180 -defaultsOSRD
+preplace port sys_clock -pg 1 -lvl 0 -x -30 -y -80 -defaultsOSRD
+preplace port reset -pg 1 -lvl 0 -x -30 -y -100 -defaultsOSRD
+preplace port btnR -pg 1 -lvl 0 -x -30 -y -420 -defaultsOSRD
+preplace port btnL -pg 1 -lvl 0 -x -30 -y -450 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 80 -y -90 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -x 420 -y -320 -defaultsOSRD
+preplace inst proc_sys_reset_1 -pg 1 -lvl 2 -x 420 -y -60 -defaultsOSRD
+preplace inst AXI4Stream_UART_0 -pg 1 -lvl 3 -x 840 -y -190 -defaultsOSRD
+preplace inst depacketizer_0 -pg 1 -lvl 3 -x 840 -y -520 -defaultsOSRD
+preplace inst packetizer_0 -pg 1 -lvl 5 -x 1570 -y -500 -defaultsOSRD
+preplace inst system_ila_0 -pg 1 -lvl 6 -x 1930 -y -490 -defaultsOSRD
+preplace inst mute_controller_0 -pg 1 -lvl 4 -x 1230 -y -490 -defaultsOSRD
+preplace netloc clk_wiz_0_locked 1 1 1 190 -280n
+preplace netloc clk_wiz_0_clk_out2 1 1 5 200 -160 600 -410 1050 -590 1390 -410 1720
+preplace netloc sys_clock_1 1 0 1 NJ -80
+preplace netloc reset_1 1 0 2 -10 -170 180
+preplace netloc proc_sys_reset_0_peripheral_reset 1 2 1 590 -320n
+preplace netloc proc_sys_reset_1_peripheral_aresetn 1 2 4 610 -440 1020 -620 1400 -400 1740
+preplace netloc clk_wiz_0_clk_out1 1 1 2 170 -220 630
+preplace netloc MUTE_RIGHT_0_1 1 0 6 NJ -420 NJ -420 NJ -420 1060J -380 N -380 1750
+preplace netloc MUTE_LEFT_0_1 1 0 6 -10J -430 NJ -430 NJ -430 1070J -390 N -390 1730
+preplace netloc uart_to_depacket 1 2 4 630 -600 1040 -600 NJ -600 1710J
+preplace netloc packetizer_0_m_axis 1 2 4 620 -630 NJ -630 N -630 1750
+preplace netloc depacketizer_to_mute 1 3 3 1030 -610 NJ -610 1720
+preplace netloc AXI4Stream_UART_0_UART 1 3 4 N -180 N -180 N -180 N
+preplace netloc mute_to_packet 1 4 2 1410 -420 1710
+levelinfo -pg 1 -30 80 420 840 1230 1570 1930 2050
+pagesize -pg 1 -db -bbox -sgen -150 -690 2160 580
+"
+}
+{
+   "da_board_cnt":"10",
+   "da_clkrst_cnt":"20"
+}

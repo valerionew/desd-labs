@@ -17,24 +17,17 @@ entity packetizer is
     
         ------------AXI4-Stream--slave-------------
         -- AXI4Stream Clock
-        S_AXIS_ACLK		:   out 	STD_LOGIC := '0';
-        -- AXI4Stream Reset
-        S_AXIS_ARESETN	:   out 	STD_LOGIC := '0';
         -- Master Stream Ports. TVALID indicates that the master is driving a valid transfer, A transfer takes place when both TVALID and TREADY are asserted. 
-        S_AXIS_TVALID	:   in 	    STD_LOGIC;
+        S_AXIS_TVALID	:   in      STD_LOGIC;
         -- TDATA is the primary payload that is used to provide the data that is passing across the interface from the master.
         S_AXIS_TDATA	:   in 	    STD_LOGIC_VECTOR(C_S_AXIS_TDATA_WIDTH-1 DOWNTO 0);
         -- TREADY indicates that the slave can accept a transfer in the current cycle.
-        S_AXIS_TREADY	:   out 	STD_LOGIC := '0';
+        S_AXIS_TREADY	:   out 	STD_LOGIC := '1';
         -- AXI4Stream tLAST to distinguish between left and right ciannol
         S_AXIS_TLAST	:   in  	STD_LOGIC;
         --------------------------------------------
 
          --------------AXI4-Stream--master------------
-        -- AXI4Stream: Clock
-        M_AXIS_ACLK		:   out 	STD_LOGIC := '0';
-        -- AXI4Stream: Reset
-        M_AXIS_ARESETN	:   out 	STD_LOGIC := '0';
         -- Ready to accept data in
         M_AXIS_TREADY	:   in 	    STD_LOGIC;
         -- Data in
@@ -75,18 +68,27 @@ begin
             COMPLETE_PACKET <= '0';
 
         elsif rising_edge(clk) then
-            if COMPLETE_PACKET = '0' and S_AXIS_TVALID = '1' then
+        
+            if  M_AXIS_TVALID_s = '1' and M_AXIS_TREADY = '1' then
+                    M_AXIS_TVALID_s <= '0';
+            end if;
+            
+            if COMPLETE_PACKET = '0' then
                 if index = PACKET_LENGTH then
                     -- we finished the packet
                     S_AXIS_TREADY <= '0';
                     COMPLETE_PACKET <= '1';
                     index <= 0;
-                else 
+                elsif S_AXIS_TVALID = '1' then
                     -- there is more room to complete the packet
                     -- add more data
 
-                    -- do the shift                                                    8-1                                          16 - 1                        8 
-                    SR    <= SR(PACKET_LENGTH - 3 downto 0) & S_AXIS_TDATA (C_M_AXIS_TDATA_WIDTH-1 downto 0) & S_AXIS_TDATA (C_S_AXIS_TDATA_WIDTH-1 downto C_M_AXIS_TDATA_WIDTH);
+                    -- do the shift                                               
+                    SR    <= SR(PACKET_LENGTH - 3 downto 0) & 
+                                            --    8 - 1
+                             S_AXIS_TDATA (C_M_AXIS_TDATA_WIDTH-1 downto 0) & 
+                                           --     16 - 1                        8 
+                             S_AXIS_TDATA (C_S_AXIS_TDATA_WIDTH-1 downto C_M_AXIS_TDATA_WIDTH);
                     -- increment index
                     index <= index + 2;
 
@@ -96,28 +98,30 @@ begin
                 M_AXIS_TVALID_s  <= '1';
                 -- writeoute!
 
+                -- we increase the writeout index to keep track of where we are at in the writeout
+                writeout_index <= writeout_index + 1;
+
                 if writeout_index = 0 then
                 -- it's header time!
                     M_AXIS_TDATA <= HEADER;
+                    
                 elsif writeout_index = PACKET_LENGTH then
                 -- it's footer time!
                     M_AXIS_TDATA <= FOOTER;
                 elsif writeout_index = PACKET_LENGTH+1 then
                 -- all has been written
                     COMPLETE_PACKET <= '0';
+                    S_AXIS_TREADY <= '1';
                     writeout_index  <=  0 ;
+                    M_AXIS_TVALID_s  <= '0';
                 else                    
                 -- here we are shifting, but we cold as well just mux the data out without shifting.
                     M_AXIS_TDATA   <= SR(PACKET_LENGTH - 1);
-                    SR (PACKET_LENGTH - 1 downto 1) <= SR(PACKET_LENGTH - 2 downto 0); 
-
-                -- we increase the writeout index to keep track of where we are at in the writeout
-                    writeout_index <= writeout_index + 1;
                     
+                    SR (PACKET_LENGTH - 1 downto 1) <= SR(PACKET_LENGTH - 2 downto 0); 
                 end if;
 
-            elsif  M_AXIS_TVALID_s = '1' and M_AXIS_TREADY = '1' then
-                M_AXIS_TVALID_s <= '0';
+            
             end if;
 
 

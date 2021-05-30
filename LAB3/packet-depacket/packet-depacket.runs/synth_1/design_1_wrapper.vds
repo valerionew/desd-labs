@@ -1,0 +1,225 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat May 22 17:27:12 2021
+# Process ID: 4056
+# Current directory: C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1
+# Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/design_1_wrapper.vds
+# Journal file: C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/valer/Documents/desd-labs/IPs_DESD'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+add_files: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1000.770 ; gain = 0.000
+Command: synth_design -top design_1_wrapper -part xc7a35tcpg236-1 -flatten_hierarchy none -directive RuntimeOptimized -fsm_extraction off
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 15472
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1000.770 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:23]
+INFO: [Synth 8-3491] module 'design_1' declared at 'c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/synth/design_1.vhd:14' bound to instance 'design_1_i' of component 'design_1' [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:33]
+INFO: [Synth 8-638] synthesizing module 'design_1' [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/synth/design_1.vhd:27]
+INFO: [Synth 8-3491] module 'design_1_AXI4Stream_UART_0_2' declared at 'C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_AXI4Stream_UART_0_2_stub.vhdl:5' bound to instance 'AXI4Stream_UART_0' of component 'design_1_AXI4Stream_UART_0_2' [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/synth/design_1.vhd:200]
+INFO: [Synth 8-638] synthesizing module 'design_1_AXI4Stream_UART_0_2' [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_AXI4Stream_UART_0_2_stub.vhdl:25]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_0_1' declared at 'C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_clk_wiz_0_1_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'design_1_clk_wiz_0_1' [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/synth/design_1.vhd:217]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_0_1' [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_clk_wiz_0_1_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'design_1_depacketizer_0_0' declared at 'C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_depacketizer_0_0_stub.vhdl:5' bound to instance 'depacketizer_0' of component 'design_1_depacketizer_0_0' [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/synth/design_1.vhd:225]
+INFO: [Synth 8-638] synthesizing module 'design_1_depacketizer_0_0' [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_depacketizer_0_0_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'design_1_packetizer_0_0' declared at 'C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_packetizer_0_0_stub.vhdl:5' bound to instance 'packetizer_0' of component 'design_1_packetizer_0_0' [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/synth/design_1.vhd:237]
+INFO: [Synth 8-638] synthesizing module 'design_1_packetizer_0_0' [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_packetizer_0_0_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'design_1_proc_sys_reset_0_1' declared at 'C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_proc_sys_reset_0_1_stub.vhdl:5' bound to instance 'proc_sys_reset_0' of component 'design_1_proc_sys_reset_0_1' [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/synth/design_1.vhd:249]
+INFO: [Synth 8-638] synthesizing module 'design_1_proc_sys_reset_0_1' [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_proc_sys_reset_0_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_proc_sys_reset_1_0' declared at 'C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_proc_sys_reset_1_0_stub.vhdl:5' bound to instance 'proc_sys_reset_1' of component 'design_1_proc_sys_reset_1_0' [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/synth/design_1.vhd:262]
+INFO: [Synth 8-638] synthesizing module 'design_1_proc_sys_reset_1_0' [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_proc_sys_reset_1_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_system_ila_0_0' declared at 'C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_system_ila_0_0_stub.vhdl:5' bound to instance 'system_ila_0' of component 'design_1_system_ila_0_0' [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/synth/design_1.vhd:275]
+INFO: [Synth 8-638] synthesizing module 'design_1_system_ila_0_0' [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/.Xil/Vivado-4056-DESKTOP-65ETA1A/realtime/design_1_system_ila_0_0_stub.vhdl:25]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (1#1) [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/synth/design_1.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (2#1) [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1000.770 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1000.770 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1000.770 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1000.770 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_1/design_1_clk_wiz_0_1/design_1_clk_wiz_0_1_in_context.xdc] for cell 'design_1_i/clk_wiz_0'
+Finished Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_1/design_1_clk_wiz_0_1/design_1_clk_wiz_0_1_in_context.xdc] for cell 'design_1_i/clk_wiz_0'
+Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1_in_context.xdc] for cell 'design_1_i/proc_sys_reset_0'
+Finished Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1/design_1_proc_sys_reset_0_1_in_context.xdc] for cell 'design_1_i/proc_sys_reset_0'
+Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_1_0/design_1_proc_sys_reset_1_0/design_1_proc_sys_reset_0_0_in_context.xdc] for cell 'design_1_i/proc_sys_reset_1'
+Finished Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_proc_sys_reset_1_0/design_1_proc_sys_reset_1_0/design_1_proc_sys_reset_0_0_in_context.xdc] for cell 'design_1_i/proc_sys_reset_1'
+Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_2/design_1_AXI4Stream_UART_0_2/design_1_AXI4Stream_UART_0_1_in_context.xdc] for cell 'design_1_i/AXI4Stream_UART_0'
+Finished Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_AXI4Stream_UART_0_2/design_1_AXI4Stream_UART_0_2/design_1_AXI4Stream_UART_0_1_in_context.xdc] for cell 'design_1_i/AXI4Stream_UART_0'
+Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_depacketizer_0_0/design_1_depacketizer_0_0/design_1_depacketizer_0_0_in_context.xdc] for cell 'design_1_i/depacketizer_0'
+Finished Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_depacketizer_0_0/design_1_depacketizer_0_0/design_1_depacketizer_0_0_in_context.xdc] for cell 'design_1_i/depacketizer_0'
+Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_packetizer_0_0/design_1_packetizer_0_0/design_1_packetizer_0_0_in_context.xdc] for cell 'design_1_i/packetizer_0'
+Finished Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_packetizer_0_0/design_1_packetizer_0_0/design_1_packetizer_0_0_in_context.xdc] for cell 'design_1_i/packetizer_0'
+Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_system_ila_0_0/design_1_system_ila_0_0/design_1_system_ila_0_0_in_context.xdc] for cell 'design_1_i/system_ila_0'
+Finished Parsing XDC File [c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_system_ila_0_0/design_1_system_ila_0_0/design_1_system_ila_0_0_in_context.xdc] for cell 'design_1_i/system_ila_0'
+Parsing XDC File [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1000.770 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1000.770 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1000.770 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1000.770 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_1/design_1_clk_wiz_0_1/design_1_clk_wiz_0_1_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.gen/sources_1/bd/design_1/ip/design_1_clk_wiz_0_1/design_1_clk_wiz_0_1/design_1_clk_wiz_0_1_in_context.xdc, line 5).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/clk_wiz_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/proc_sys_reset_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/proc_sys_reset_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/AXI4Stream_UART_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/depacketizer_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/packetizer_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/system_ila_0. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1000.770 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1000.770 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:18 . Memory (MB): peak = 1000.770 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1003.387 ; gain = 2.617
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1022.961 ; gain = 22.191
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1027.785 ; gain = 27.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1027.785 ; gain = 27.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1027.785 ; gain = 27.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+-----------------------------+----------+
+|      |BlackBox name                |Instances |
++------+-----------------------------+----------+
+|1     |design_1_AXI4Stream_UART_0_2 |         1|
+|2     |design_1_clk_wiz_0_1         |         1|
+|3     |design_1_depacketizer_0_0    |         1|
+|4     |design_1_packetizer_0_0      |         1|
+|5     |design_1_proc_sys_reset_0_1  |         1|
+|6     |design_1_proc_sys_reset_1_0  |         1|
+|7     |design_1_system_ila_0_0      |         1|
++------+-----------------------------+----------+
+
+Report Cell Usage: 
++------+----------------------------------+------+
+|      |Cell                              |Count |
++------+----------------------------------+------+
+|1     |design_1_AXI4Stream_UART_0_2_bbox |     1|
+|2     |design_1_clk_wiz_0_1_bbox         |     1|
+|3     |design_1_depacketizer_0_0_bbox    |     1|
+|4     |design_1_packetizer_0_0_bbox      |     1|
+|5     |design_1_proc_sys_reset_0_1_bbox  |     1|
+|6     |design_1_proc_sys_reset_1_0_bbox  |     1|
+|7     |design_1_system_ila_0_0_bbox      |     1|
+|8     |IBUF                              |     2|
+|9     |OBUF                              |     1|
++------+----------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1027.785 ; gain = 27.016
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 1027.785 ; gain = 27.016
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1027.785 ; gain = 27.016
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1039.844 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1040.809 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:43 . Memory (MB): peak = 1040.809 ; gain = 40.039
+INFO: [Common 17-1381] The checkpoint 'C:/Users/valer/Documents/desd-labs/LAB3/packet-depacket/packet-depacket.runs/synth_1/design_1_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat May 22 17:28:18 2021...
